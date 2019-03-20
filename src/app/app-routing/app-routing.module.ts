@@ -5,6 +5,8 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
+import { InvitadoComponent} from "../invitado/invitado.component";
+import { UsuarioComponent } from "../usuario/usuario.component";
 
 const routes: Routes = [
 
@@ -34,12 +36,27 @@ const routes: Routes = [
         ]
     },
     {
+        path:'usuario',
+        children:[
+            {
+                path: 'home',
+                component: UsuarioComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT']
+                    }
+                }
+            }
+        ]
+    },
+    {
         path: 'home',
         component: AuthLoginComponent
     },
     {
         path: '**',
-        redirectTo: 'home',
+        component: InvitadoComponent,
     }
 ];
 

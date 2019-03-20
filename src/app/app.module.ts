@@ -13,6 +13,8 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
+import { InvitadoComponent } from './invitado/invitado.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 
 
@@ -21,7 +23,9 @@ import {AuthModule} from './auth/auth.module';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        InvitadoComponent,
+        UsuarioComponent
     ],
     imports: [
         BrowserModule,
