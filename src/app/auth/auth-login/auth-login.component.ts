@@ -34,8 +34,12 @@ export class AuthLoginComponent implements OnInit {
     */
     login(): void {
         this.authService.login(this.user.role);
-        this.toastrService.success('¡ Ingreso Exitoso !');
-        this.router.navigate(['usuario/home']);
+        if(this.user.role===this.roles[1]){
+            this.router.navigate(['usuario/home']);
+        }  
+        else
+            this.router.navigate(['admin']); 
+        this.toastrService.success('¡ Ingreso Exitoso !');    
     }
 
     /**

@@ -10,21 +10,21 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="form-inline my-2 my-lg-0" id="search">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-inline-success my-2 my-sm-0" type="submit">Search</button>
+                <form class="buscar form-inline my-2 my-lg-0" id="search">
+                        <input class="mr-sm-2 form__field" type="search" placeholder="Buscar Producción" aria-label="Search">
+                        <button class="btn-search search my-2 my-sm-0" type="submit">Buscar</button>
                 </form>
             <div class="navbar-nav ml-auto flex-column">
                 <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
                     <div class="form-inline">
-                        <li class="right-space  mx-2"><a  class="white" id="signup-navbar-item" routerLink="/auth/sign-up"><span class="fa fa-user"></span>
+                        <li class="right-space  mx-2"><a  class="white link link-nav" id="signup-navbar-item" routerLink="/auth/sign-up"><span class="fa fa-user"></span>
                                 Registrarse</a></li>
-                        <li><a class="white" id="login-navbar-item" routerLink="/auth/login"><span class="fa fa-sign-in"></span>Ingresar</a></li>
+                        <li><a class="white link link-nav" id="login-navbar-item" routerLink="/auth/login"><span class="fa fa-sign-in"></span>Ingresar</a></li>
                     </div>
                 </div>
                 <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
                     <div class="form-inline">
-                        <li><a class="white" id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Salir</a></li>
+                        <li><a class="white link-nav" id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Salir</a></li>
                     </div>
                 </div>
             </div>

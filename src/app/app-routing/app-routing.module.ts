@@ -7,6 +7,9 @@ import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { InvitadoComponent} from "../invitado/invitado.component";
 import { UsuarioComponent } from "../usuario/usuario.component";
+import { AdminComponent } from '../admin/admin.component';
+import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
+import { UsuarioDetalleComponent } from '../usuarios/usuario-detalle/usuario-detalle.component';
 
 const routes: Routes = [
 
@@ -45,6 +48,32 @@ const routes: Routes = [
                 data: {
                     permissions: {
                         only: ['CLIENT']
+                    }
+                }
+            }
+        ]
+    },
+    {
+        path:'admin',
+        component: AdminComponent,
+        children:[
+            {
+                path: 'usuario/lista',
+                component: UsuarioListaComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
+            },
+            {
+                path: 'usuario/detalle/:id',
+                component: UsuarioDetalleComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
                     }
                 }
             }

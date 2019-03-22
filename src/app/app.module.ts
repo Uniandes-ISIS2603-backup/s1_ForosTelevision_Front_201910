@@ -15,21 +15,20 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { InvitadoComponent } from './invitado/invitado.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-
-
-
-
-
+import { AdminComponent } from './admin/admin.component';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @NgModule({
     declarations: [
         AppComponent,
         InvitadoComponent,
-        UsuarioComponent
+        UsuarioComponent,
+        AdminComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
+        UsuariosModule,
         HttpClientModule,
         BrowserAnimationsModule,
         ModalDialogModule.forRoot(),
