@@ -1,0 +1,26 @@
+{
+  "status": 200,
+  "data": [
+    {
+      "id": 19,
+      "nombre": "brandon",
+      "password": "1222",
+      "privilegio": "Admin",
+      "email": "bs.rincon@com"
+    },
+    {
+      "id": 20,
+      "nombre": "brandon r",
+      "password": "1222wwe",
+      "privilegio": "Usuario",
+      "email": "bs.rincong@com"
+    },
+    {
+      "id": 21,
+      "nombre": "brandon rincon",
+      "password": "12we",
+      "privilegio": "Usuario",
+      "email": "bs.rincong@gmail.com"
+    }
+  ]
+}
