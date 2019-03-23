@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": [
+    {
+      "id": 1,
+      "portada": "\"https://cdn-sm5-prog.hbomax.tv/series/12500714.jpg\"",
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "\"http://static.t13.cl/images/sizes/1200x675/1520961041-04-2-920x518.jpg\""
+        },
+        {
+          "id": 2,
+          "url": "\"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwiz4tm3opnhAhUGo1kKHSNgCEkQjRx6BAgBEAU&url=https%3A%2F%2Fperu21.pe%2Fcheka%2Fseries%2Fgame-of-thrones-primer-trailer-temporada-8-ver-serie-nnda-nnlt-456627&psig=AOvVaw3UUo-Mol74yI7Im47leKeg&ust=1553464789880407\""
+        }
+      ],
+      "videos": [
+        {
+          "id": 1,
+          "url": "\"https://www.youtube.com/watch?v=rlR4PJn8b8I\""
+        },
+        {
+          "id": 2,
+          "url": "\"https://www.youtube.com/watch?v=QaK7zx9E7Fw\""
+        }
+      ]
+    }
+  ]
+}
