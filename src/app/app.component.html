@@ -1,8 +1,8 @@
-<div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div  class="container-fluid no-padding">
+    <nav class="navbar navbar-expand-lg navbar-light base-blue">
         <a class="navbar-brand" href="#">
             <div class="form-inline">
-                <h2 class="mainTitle">sXXX_ZZZ-Front</h2>
+                <h4 class="white">Foros de Televisión</h4>
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -10,36 +10,32 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav mr-auto mt-0">
-                
-            </div>
+                <form class="buscar form-inline my-2 my-lg-0" id="search">
+                        <input class="mr-sm-2 form__field" type="search" placeholder="Buscar Producción" aria-label="Search">
+                        <button class="btn-search search my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
             <div class="navbar-nav ml-auto flex-column">
                 <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
                     <div class="form-inline">
-                        <li class="right-space"><a id="signup-navbar-item" routerLink="/auth/sign-up"><span class="fa fa-user"></span>
-                                Sign Up</a></li>
-                        <li><a id="login-navbar-item" routerLink="/auth/login"><span class="fa fa-sign-in"></span>Login</a></li>
+                        <li class="right-space  mx-2"><a  class="white link link-nav" id="signup-navbar-item" routerLink="/auth/sign-up"><span class="fa fa-user"></span>
+                                Registrarse</a></li>
+                        <li><a class="white link link-nav" id="login-navbar-item" routerLink="/auth/login"><span class="fa fa-sign-in"></span>Ingresar</a></li>
                     </div>
                 </div>
                 <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
                     <div class="form-inline">
-                        <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
+                        <li><a class="white link-nav" id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Salir</a></li>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-
-    <div>
         <router-outlet></router-outlet>
-        <br>
-        <br>
-    </div>
     <footer class="footer bg-light" id="footer">
         <div class="container">
             <p class="navbar-text text-center">
-                <img src="../assets/uniandes.png" alt="logo" width="8%" /><span id="footer-text"></span>
-                <a routerLink="/home"> sXXX_ZZZ-Front</a>
+                <img class="mx-5 mt-2" src="../assets/uniandes.png" alt="logo" width="8%" /><span id="footer-text"></span>
+                <a routerLink="/home">Foros de Televisión</a>
             </p>
         </div>
     </footer>

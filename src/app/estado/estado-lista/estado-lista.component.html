@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row mx-1 my-4">
+        <h2 class="text-left col-sm-12 col-md-9">Estados de usuario</h2>
+    </div>
+    <section class="col-12 loader" [ngClass]="{'ocultar': !flagLoad }">
+        <img src="../../../assets/img/loading.gif">
+        <h4 class="col-12 text-center header-load">Cargando contenido...</h4>
+    </section>
+    <section class="container-fluid row" [ngClass]="{'ocultar': flagLoad }">
+        <div class="card col-xs-12 col-md-3 ml-2" *ngFor="let estado of estados">
+            <h5>{{estado.serie.nombre}}</h5>
+            <p><b>Capitulos vistos:</b>{{ estado.capitulos_vistos}}</p>
+            <p><b>Vista: </b>{{ estado.vista == '1' ? 'Sí' : 'No' }}</p>
+            <p><b>Favorita: </b>{{ estado.favorita == '1' ? 'Sí' : 'No' }}</p>
+        </div>
+    </section>
+</div>

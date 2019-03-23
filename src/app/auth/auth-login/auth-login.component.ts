@@ -5,6 +5,7 @@ import { AuthService } from '../auth.service';
 import { User } from '../user';
 
 import { ToastrService } from 'ngx-toastr';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-auth-login',
@@ -21,6 +22,7 @@ export class AuthLoginComponent implements OnInit {
     constructor(
         private authService: AuthService,
         private toastrService: ToastrService,
+        private router:Router
     ) { }
 
     user: User;
@@ -32,7 +34,12 @@ export class AuthLoginComponent implements OnInit {
     */
     login(): void {
         this.authService.login(this.user.role);
-        this.toastrService.success('Logged in')
+        if(this.user.role===this.roles[1]){
+            this.router.navigate(['usuario/home']);
+        }  
+        else
+            this.router.navigate(['admin']); 
+        this.toastrService.success('¡ Ingreso Exitoso !');    
     }
 
     /**

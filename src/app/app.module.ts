@@ -1,31 +1,40 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {ToastrModule} from 'ngx-toastr';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ModalDialogModule} from 'ngx-modal-dialog';
+import {NgxPaginationModule} from 'ngx-pagination';
 import {NgxPermissionsModule} from 'ngx-permissions';
-import { ModalDialogModule } from 'ngx-modal-dialog';
+import {ToastrModule} from 'ngx-toastr';
+import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 
-import {AppComponent} from './app.component';
+import {AdminComponent} from './admin/admin.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
+import {AppComponent} from './app.component';
 import {AuthModule} from './auth/auth.module';
-
-
-
-
-
+import {DiaModule} from './dia/dia.module';
+import {EstadoModuleModule} from './estado/estado-module.module';
+import { InvitadoComponent } from './invitado/invitado.component';
+import {MultimediaModule} from './multimedia/multimedia.module';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        InvitadoComponent,
+        UsuarioComponent,
+        AdminComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
+        UsuariosModule,
+        EstadoModuleModule,
+        DiaModule,
+        MultimediaModule,
         HttpClientModule,
         BrowserAnimationsModule,
         ModalDialogModule.forRoot(),
@@ -38,15 +47,15 @@ import {AuthModule} from './auth/auth.module';
         }),
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
-        NgbModule
+        NgbModule,
     ],
     bootstrap: [AppComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
             useClass: HttpErrorInterceptor,
-            multi: true
-        }
-    ]
+            multi: true,
+        },
+    ],
 })
 export class AppModule {}

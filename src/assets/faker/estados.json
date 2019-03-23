@@ -1,0 +1,27 @@
+{
+  "status": 200,
+  "data": [
+    {
+      "id": 1,
+      "capitulos_vistos": 2,
+      "vista": 1,
+      "favorita": 1,
+      "na": 1,
+      "serie": {
+        "id": "1",
+        "nombre": "Los Perdidos"
+      }
+    },
+    {
+      "id": 2,
+      "capitulos_vistos": 3,
+      "vista": 2,
+      "favorita": 1,
+      "na": 0,
+      "serie": {
+        "id": "1",
+        "nombre": "Los Otros"
+      }
+    }
+  ]
+}

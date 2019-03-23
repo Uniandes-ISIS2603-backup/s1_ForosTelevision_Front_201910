@@ -1,0 +1,10 @@
+{
+  "status": 200,
+  "data": {
+    "id": 19,
+    "nombre": "brandon",
+    "password": "1222",
+    "privilegio": "Admin",
+    "email": "bs.rincon@com"
+  }
+}
