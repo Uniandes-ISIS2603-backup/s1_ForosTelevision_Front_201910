@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 
 const API_URL = '../../assets/faker/';
-const dias = 'usuarios.json';
+const dias = 'dias.json';
 
 @Injectable()
 export class DiaService {
