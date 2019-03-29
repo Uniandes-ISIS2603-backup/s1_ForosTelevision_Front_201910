@@ -6,7 +6,7 @@ export class User {
     /**
     * The user's name
     */
-    name: string;
+    email: string;
 
     /**
     * The user's password

@@ -11,7 +11,11 @@ import {Usuario} from '../usuario';
 export class UsuarioDetalleComponent implements OnInit {
 
     public id = 0;
-    usuario: Usuario;
+    public usuario: Usuario;
+    /**
+     * Flag de lazy load y render lista
+     */
+    public flagLoad = false;
 
     constructor(activateRoute: ActivatedRoute,
                 private apiService: ApiService) {
@@ -19,13 +23,10 @@ export class UsuarioDetalleComponent implements OnInit {
     }
 
     private async loadData() {
-        this.apiService.getUsuario(this.id).subscribe(
+        await this.apiService.getUsuario(this.id).subscribe(
             (informacion) => {
-                if (informacion.status === 200) {
-                    this.usuario = informacion.data;
-                } else {
-                    console.error('Error api usuario');
-                }
+                this.usuario = informacion;
+                this.flagLoad = true;
             });
     }
 
