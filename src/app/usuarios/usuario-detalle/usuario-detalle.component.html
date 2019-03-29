@@ -1,6 +1,11 @@
 <div class="container-fluid">
-    <div class="row my-4">
-        <h4 class="col-md-12">Usuario {{ usuario.nombre}}</h4>
+    <!--Lazy loader-->
+    <section class="col-12 loader" *ngIf="!flagLoad">
+        <img src="../../../assets/img/loading.gif">
+        <h4 class="col-12 text-center header-load">Cargando contenido...</h4>
+    </section>
+    <div class="row my-4 mx-4" *ngIf="flagLoad">
+        <h4 class="col-md-12">Usuario <b>{{ usuario.nombre }}</b></h4>
         <p class="text-left col-md-6"><b>Email:</b> {{ usuario.email }}</p>
         <p class="text-left col-md-6"><b>Privilegio:</b> {{ usuario.privilegio }}</p>
     </div>
