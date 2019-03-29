@@ -20,6 +20,7 @@ import { InvitadoComponent } from './invitado/invitado.component';
 import {MultimediaModule} from './multimedia/multimedia.module';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
+import { ListarCanalesComponent } from './canales/listar-canales/listar-canales.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
         InvitadoComponent,
         UsuarioComponent,
         AdminComponent,
+        ListarCanalesComponent,
     ],
     imports: [
         BrowserModule,
