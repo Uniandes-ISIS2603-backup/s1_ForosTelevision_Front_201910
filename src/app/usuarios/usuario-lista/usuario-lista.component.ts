@@ -23,12 +23,8 @@ export class UsuarioListaComponent implements OnInit {
      */
     private async loadData() {
         await this.apiServive.getUsuarios().subscribe((informacion) => {
-            if (informacion.status === 200) {
-                this.usuarios = informacion.data;
-                this.flagLoad = false;
-            } else {
-                console.error('HTTP ERROR GET USUARIOS');
-            }
+            this.usuarios = informacion;
+            this.flagLoad = false;
         });
     }
 
