@@ -10,6 +10,9 @@ import {NgxPermissionsModule} from 'ngx-permissions';
 import {ToastrModule} from 'ngx-toastr';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {environment} from '../environments/environment';
 import {AdminComponent} from './admin/admin.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AppComponent} from './app.component';
@@ -30,6 +33,8 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     ],
     imports: [
         BrowserModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireStorageModule,
         AppRoutingModule,
         UsuariosModule,
         EstadoModuleModule,

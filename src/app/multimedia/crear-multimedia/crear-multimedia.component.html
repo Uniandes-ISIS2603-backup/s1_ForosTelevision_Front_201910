@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="col-md-8 offset-2 row">
+        <br>
+        <h2 class="text-center col-12 mt-5">Cargar contenido multimedia</h2>
+        <br>
+        <div class="carga col-md-7 col-xs-12 mt-3">
+            <img *ngIf="portada.length>0" src="{{ portada }}" class="img-fluid rounded img-portada my-1">
+            <label class="file btn btn-outline-secondary">
+                <b>{{ porcentajePortada }}</b>
+                <input type="file" accept="image/x-png,image/jpeg" name="portada" class="form-control" id="portada"
+                       (change)="selectPortada($event)">
+            </label>
+        </div>
+        <div class="col-md-4 col-xs-12 mt-3">
+            <label for="video"><b>Url de vídeo:</b></label>
+            <input type="text" name="video" class="form-control" id="video" [(ngModel)]="video">
+        </div>
+        <div class="row col-12 mt-3">
+            <h3 class="text-left my-2 col-12">Imagenes Relacionadas</h3>
+            <div *ngFor="let im of imagenesEstado" class="carga col-md-3 col-xs-12">
+                <img *ngIf="imagenesUrl[im.id].length>0" src="{{ imagenesUrl[im.id] }}"
+                     class="img-fluid rounded portada my-1">
+                <label class="file btn btn-outline-warning">
+                    <b>{{ im.estado }}</b>
+                    <input type="file" accept="image/x-png,image/jpeg" name="portada" class="form-control"
+                           id="{{ 'portada_'+im.id }}" (change)="selectImg($event,im)">
+                </label>
+            </div>
+        </div>
+        <div class="col-md-12 mt-3 text-center">
+            <button class="btn btn-danger" (click)="guardar()">Guardar Cambios</button>
+        </div>
+    </div>
+</div>
