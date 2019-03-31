@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { AuthService } from './auth/auth.service';
 
 /**
- * The app component. This component is the base of sXXX_ZZZ-Front
+ * The app component. This component is the base of s2_foros-Front
  */
 @Component({
     selector: 'app-root',
