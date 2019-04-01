@@ -1,7 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {Multimedia} from "../multimedia";
+import {Router} from '@angular/router';
+import {forEach} from '@angular/router/src/utils/collection';
+import {ToastrService} from 'ngx-toastr';
+import {Multimedia} from '../multimedia';
 import {MultimediaService} from '../multimedia.service';
+import {__await} from "tslib";
 
 @Component({
     selector: 'app-crear-multimedia',
@@ -17,7 +20,7 @@ export class CrearMultimediaComponent implements OnInit {
     porcentajePortada = 'Cargar Portada';
     video: string;
 
-    constructor(private multimediaService: MultimediaService, private router: Router) {
+    constructor(private multimediaService: MultimediaService, private router: Router, private toastrService: ToastrService) {
     }
 
     ngOnInit() {
@@ -72,13 +75,16 @@ export class CrearMultimediaComponent implements OnInit {
         });
     }
 
-    guardar() {
-        const m: Multimedia = {id: 0, portada: this.portada, imagenes: this.imagenesUrl, video: this.video};
-        this.multimediaService.registrar(m).then(
+    async guardar() {
+        const m: Multimedia = {id: 0, portada: this.portada, video: this.video, imagenes: this.imagenesUrl};
+        await this.multimediaService.registrar(m).then(
             (info) => {
                 console.log('registro M', info);
+                this.imagenesUrl.forEach((value) => {
+                    this.multimediaService.registrarImagenes(info.data.id, value);
+                });
                 this.toastrService.success('Registro', 'Registro Realizado');
-                this.router.navigate(['/admin/usuario/lista']);
+                this.router.navigate(['/admin/multimedia/lista']);
             });
     }
 
