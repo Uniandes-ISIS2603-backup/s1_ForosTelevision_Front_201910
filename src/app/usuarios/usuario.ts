@@ -1,7 +1,7 @@
 /**
  * Interface que representa un usuario
  */
-export interface Usuario {
+export class Usuario {
     id: number;
     nombre: string;
     password: string;
