@@ -66,12 +66,13 @@ export class AuthService {
      * @param role The desired role to set to the user
      */
     login(role): void {
-        if (role === 'Administrator') {
+        if (role === 'ADMINISTRADOR') {
             this.setAdministratorRole();
+            this.router.navigateByUrl('/admin');
         } else {
             this.setClientRole();
+            this.router.navigateByUrl('/usuario');
         }
-        this.router.navigateByUrl('/');
     }
 
     /**
