@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ApiService} from '../api.service';
 import {Usuario} from '../usuario';
 
@@ -19,6 +19,7 @@ export class UsuarioEditComponent implements OnInit {
     public flagLoad = false;
 
     constructor(activateRoute: ActivatedRoute,
+                private router: Router,
                 private apiService: ApiService) {
         this.id = activateRoute.snapshot.params['id'];
     }
@@ -37,7 +38,8 @@ export class UsuarioEditComponent implements OnInit {
     }
 
     actualizar() {
-
+        this.apiService.actualizarUsuario(this.usuario);
+        this.router.navigate(['/admin/usuario/lista']);
     }
 
 }

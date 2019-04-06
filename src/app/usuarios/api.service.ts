@@ -31,4 +31,14 @@ export class ApiService {
         return this.http.post(API_URL, cuerpo).toPromise();
     }
 
+    actualizarUsuario(usuario: Usuario) {
+        const cuerpo = {
+            nombre: usuario.nombre,
+            email: usuario.email,
+            privilegio: usuario.privilegio,
+            clave: usuario.password,
+        };
+        return this.http.put(API_URL, cuerpo);
+    }
+
 }

@@ -9,11 +9,12 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import {EstadoListaComponent} from '../estado/estado-lista/estado-lista.component';
 import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
+import {ListadoComponent} from '../multimedia/listado/listado.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
 import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
+import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.component';
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
-import {ListadoComponent} from "../multimedia/listado/listado.component";
 
 const routes: Routes = [
 
@@ -98,6 +99,17 @@ const routes: Routes = [
                 path: 'usuario/create',
                 pathMatch: 'full',
                 component: UsuarioCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'usuario/editar/:id',
+                pathMatch: 'full',
+                component: UsuarioEditComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
