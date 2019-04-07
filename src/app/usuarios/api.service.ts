@@ -33,6 +33,7 @@ export class ApiService {
 
     actualizarUsuario(usuario: Usuario) {
         const cuerpo = {
+            id: usuario.id,
             nombre: usuario.nombre,
             email: usuario.email,
             privilegio: usuario.privilegio,

@@ -5,6 +5,13 @@
     align-items: center;
 }
 
+.portada-contenedor {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .portada {
     width: 100%;
 }
