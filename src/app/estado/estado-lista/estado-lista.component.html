@@ -12,6 +12,9 @@
             <p><b>Capitulos vistos:</b>{{ estado.capitulos_vistos}}</p>
             <p><b>Vista: </b>{{ estado.vista == '1' ? 'Sí' : 'No' }}</p>
             <p><b>Favorita: </b>{{ estado.favorita == '1' ? 'Sí' : 'No' }}</p>
+            <div class="col-12 text-center my-1">
+                <a [routerLink]="['/admin/usuario/estado/edit',estado.id]" class="btn btn-secondary">Editar</a>
+            </div>
         </div>
     </section>
 </div>

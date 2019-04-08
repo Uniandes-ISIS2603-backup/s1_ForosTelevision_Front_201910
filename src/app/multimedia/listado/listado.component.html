@@ -10,8 +10,9 @@
   </section>
   <section class="col-12 row" [ngClass]="{'ocultar': flagLoad }">
     <div class="galeria-contenedor col-md-5 mx-2 my-2 col-xs-12 card text-center" *ngFor="let m of multimedia">
-      <div class=" m-1 galeria-contenedor">
+        <div class=" m-1 portada-contenedor">
         <img src="{{m.portada}}" alt="portada" class="portada">
+            <a [routerLink]="['/admin/multimedia/edit',m.id]" class="btn btn-secondary mt-2">Editar</a>
       </div>
       <div class="col-md-6 row col-xs-12 galeria">
         <div *ngFor="let im of m.imagenes">

@@ -33,7 +33,7 @@ export class AuthService {
         const role = localStorage.getItem('role');
         if (!role) {
             this.setGuestRole();
-        } else if (role === 'ADMINISTRADOR') {
+        } else if (role === 'ADMIN') {
             this.setAdministratorRole();
         } else {
             this.setClientRole();
