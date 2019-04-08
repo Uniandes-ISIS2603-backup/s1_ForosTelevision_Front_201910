@@ -16,6 +16,7 @@ import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detal
 import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.component';
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
 import {EditMultimediaComponent} from "../multimedia/edit-multimedia/edit-multimedia.component";
+import {EstadoEditComponent} from "../estado/estado-edit/estado-edit.component";
 
 const routes: Routes = [
 
@@ -89,6 +90,17 @@ const routes: Routes = [
                 path: 'usuario/estado/:id',
                 pathMatch: 'full',
                 component: EstadoListaComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'usuario/estado/edit/:id',
+                pathMatch: 'full',
+                component: EstadoEditComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
