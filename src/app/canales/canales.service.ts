@@ -2,9 +2,9 @@ import {HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 
-const API_URL = '../../assets/faker/';
-const canales = 'canales.json';
-const usuarios_single = 'usuario-single.json';
+const API_URL = 'http://localhost:8080/s1_foros-api/api/canales/';
+const canales = 'all';
+const canales_single = '';
 
 @Injectable()
 export class CanalesService {
@@ -12,12 +12,12 @@ export class CanalesService {
   constructor(private http: HttpClient) {
   }
 
-  getUsuarios(): Observable<any> {
-    return this.http.get<any>(API_URL + usuarios);
+  getCanales(): Observable<any> {
+    return this.http.get<any>(API_URL + canales);
   }
 
   getUsuario(id: number): Observable<any> {
-    return this.http.get<any>(API_URL + usuarios_single + `?id=${id}`);
+    return this.http.get<any>(API_URL + canales_single + `${id}`);
   }
 
 }

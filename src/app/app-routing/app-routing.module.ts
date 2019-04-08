@@ -6,6 +6,7 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 import {AdminComponent} from '../admin/admin.component';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
+import {ListarCanalesComponent} from '../canales/listar-canales/listar-canales.component';
 import {EstadoListaComponent} from '../estado/estado-lista/estado-lista.component';
 import {InvitadoComponent} from '../invitado/invitado.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
@@ -84,6 +85,17 @@ const routes: Routes = [
                 path: 'usuario/estado/:id',
                 pathMatch: 'full',
                 component: EstadoListaComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'canales/lista',
+                pathMatch: 'full',
+                component: ListarCanalesComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {

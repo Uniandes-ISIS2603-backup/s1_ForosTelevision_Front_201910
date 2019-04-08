@@ -8,6 +8,7 @@ import {ModalDialogModule} from 'ngx-modal-dialog';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import {ToastrModule} from 'ngx-toastr';
+import {CanalesModule} from './canales/canales.module';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 
 import {AdminComponent} from './admin/admin.component';
@@ -20,7 +21,6 @@ import { InvitadoComponent } from './invitado/invitado.component';
 import {MultimediaModule} from './multimedia/multimedia.module';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
-import { ListarCanalesComponent } from './canales/listar-canales/listar-canales.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +28,6 @@ import { ListarCanalesComponent } from './canales/listar-canales/listar-canales.
         InvitadoComponent,
         UsuarioComponent,
         AdminComponent,
-        ListarCanalesComponent,
     ],
     imports: [
         BrowserModule,
@@ -42,6 +41,7 @@ import { ListarCanalesComponent } from './canales/listar-canales/listar-canales.
         ModalDialogModule.forRoot(),
         AuthModule,
         FormsModule,
+        CanalesModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',
