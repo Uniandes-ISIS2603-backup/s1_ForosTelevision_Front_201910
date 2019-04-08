@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ApiService} from '../api.service';
 import {Usuario} from '../usuario';
 
@@ -12,20 +12,20 @@ export class UsuarioEditComponent implements OnInit {
 
     public id = 0;
     public roles: string[];
-    public usuario: Usuario;
+    public usuario: Usuario = null;
     /**
      * Flag de lazy load y render lista
      */
     public flagLoad = false;
 
     constructor(activateRoute: ActivatedRoute,
+                private router: Router,
                 private apiService: ApiService) {
         this.id = activateRoute.snapshot.params['id'];
     }
 
     private async loadData() {
-        await this.apiService.getUsuario(this.id).subscribe(
-            (informacion) => {
+        await this.apiService.getUsuario(this.id).subscribe((informacion) => {
                 this.usuario = informacion;
                 this.flagLoad = true;
             });
@@ -37,6 +37,11 @@ export class UsuarioEditComponent implements OnInit {
     }
 
     actualizar() {
+        this.apiService.actualizarUsuario(this.usuario).subscribe((inf) => {
+            console.log('Edit user ', inf);
+            this.router.navigate(['/admin/usuario/lista']);
+            6
+        });
 
     }
 
