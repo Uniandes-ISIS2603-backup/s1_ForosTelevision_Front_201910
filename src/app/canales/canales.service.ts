@@ -16,7 +16,7 @@ export class CanalesService {
     return this.http.get<any>(API_URL + canales);
   }
 
-  getUsuario(id: number): Observable<any> {
+  getCanal(id: number): Observable<any> {
     return this.http.get<any>(API_URL + canales_single + `${id}`);
   }
 
