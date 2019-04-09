@@ -6,17 +6,17 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 import {AdminComponent} from '../admin/admin.component';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
+import {EstadoEditComponent} from '../estado/estado-edit/estado-edit.component';
 import {EstadoListaComponent} from '../estado/estado-lista/estado-lista.component';
 import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
+import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
 import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
 import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.component';
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
-import {EditMultimediaComponent} from "../multimedia/edit-multimedia/edit-multimedia.component";
-import {EstadoEditComponent} from "../estado/estado-edit/estado-edit.component";
 
 const routes: Routes = [
 
