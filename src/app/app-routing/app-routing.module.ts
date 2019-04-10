@@ -1,11 +1,14 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
+import {CreateComponentOptions} from '@angular/core/src/render3/component';
 import {RouterModule, Routes} from '@angular/router';
 import {NgxPermissionsGuard} from 'ngx-permissions';
-
 import {AdminComponent} from '../admin/admin.component';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
+import {CanalDetailComponent} from '../canales/canal-detail/canal-detail.component';
+import {CrearCanalesComponent} from '../canales/crear-canales/crear-canales.component';
+import {EditarCanalesComponent} from '../canales/editar-canales/editar-canales.component';
 import {ListarCanalesComponent} from '../canales/listar-canales/listar-canales.component';
 import {EstadoListaComponent} from '../estado/estado-lista/estado-lista.component';
 import {InvitadoComponent} from '../invitado/invitado.component';
@@ -96,6 +99,40 @@ const routes: Routes = [
                 path: 'canales/lista',
                 pathMatch: 'full',
                 component: ListarCanalesComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'canales/lista/:id',
+                pathMatch: 'full',
+                component: CanalDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+
+            {
+                path: 'canales/editar/:id',
+                pathMatch: 'full',
+                component: EditarCanalesComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'canales/crear/',
+                pathMatch: 'full',
+                component: CrearCanalesComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
