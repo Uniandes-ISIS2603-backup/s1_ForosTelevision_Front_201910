@@ -5,9 +5,10 @@ import {RouterModule} from '@angular/router';
 import { ListarResenasComponent } from './listar-resenas/listar-resenas.component';
 import { ResenasDetailComponent } from './resenas-detail/resenas-detail.component';
 import { CrearResenasComponent } from './crear-resenas/crear-resenas.component';
+import { EditarResenasComponent } from './editar-resenas/editar-resenas.component';
 
 @NgModule({
-  declarations: [ListarResenasComponent, ResenasDetailComponent, CrearResenasComponent],
+  declarations: [ListarResenasComponent, ResenasDetailComponent, CrearResenasComponent, EditarResenasComponent],
   imports: [
     CommonModule,
     RouterModule,

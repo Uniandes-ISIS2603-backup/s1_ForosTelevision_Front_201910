@@ -22,10 +22,7 @@ export class CrearCanalesComponent implements OnInit {
    * Entidad que representa un usuario
    */
   canal: ICanal;
-  /**
-   * Arrelgo de roles de usuario
-   */
-  roles: string[];
+
 
   /**
    * Envia la informacion al api

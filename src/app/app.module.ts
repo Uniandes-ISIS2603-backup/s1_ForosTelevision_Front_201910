@@ -23,6 +23,7 @@ import {DiaModule} from './dia/dia.module';
 import {EstadoModuleModule} from './estado/estado-module.module';
 import { InvitadoComponent } from './invitado/invitado.component';
 import {MultimediaModule} from './multimedia/multimedia.module';
+import {ResenasModule} from './resenas/resenas.module';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
 
@@ -48,6 +49,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
         AuthModule,
         FormsModule,
         CanalesModule,
+        ResenasModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',
