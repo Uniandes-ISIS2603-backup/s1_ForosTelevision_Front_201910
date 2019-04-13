@@ -26,7 +26,7 @@ export class CanalesService {
     const cuerpo = {
       id: canal.id,
       nombre: canal.nombre,
-      email: canal.rating,
+      rating: canal.rating,
   };
     return this.http.put(API_URL, cuerpo);
 
