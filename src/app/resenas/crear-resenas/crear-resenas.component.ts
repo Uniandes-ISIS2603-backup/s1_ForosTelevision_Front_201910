@@ -27,6 +27,7 @@ export class CrearResenasComponent implements OnInit {
    * Envia la informacion al api
    */
   creacion(): void {
+
     console.log('creacion', this.resena);
     this.resenaService.crearResena(this.resena).then(
         () => {
@@ -39,9 +40,6 @@ export class CrearResenasComponent implements OnInit {
    * This function will initialize the component
    */
   ngOnInit() {
-    // @ts-ignore
-    this.resena = new Resena();
-
   }
 
 
