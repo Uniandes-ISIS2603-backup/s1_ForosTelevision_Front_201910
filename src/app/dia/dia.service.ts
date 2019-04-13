@@ -12,10 +12,17 @@ export class DiaService {
     constructor(private http: HttpClient) {
     }
 
+    /**
+     * Lista de días registrados
+     */
     getDias(): Observable<any> {
         return this.http.get<any>(API_URL + dias);
     }
 
+    /**
+     * Registro de dia
+     * @param dia instancia de dia
+     */
     registro(dia: Dia): Promise<any> {
         return this.http.post(API_URL, dia).toPromise();
     }

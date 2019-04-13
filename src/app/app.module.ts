@@ -8,6 +8,7 @@ import {ModalDialogModule} from 'ngx-modal-dialog';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import {ToastrModule} from 'ngx-toastr';
+import {CanalesModule} from './canales/canales.module';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 
 import {AngularFireModule} from '@angular/fire';
@@ -45,6 +46,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
         ModalDialogModule.forRoot(),
         AuthModule,
         FormsModule,
+        CanalesModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',
