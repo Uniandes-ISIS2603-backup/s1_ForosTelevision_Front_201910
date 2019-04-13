@@ -22,10 +22,18 @@ export class UsuarioCreateComponent implements OnInit {
     ) {
     }
 
+    /**
+     * Entidad que representa un usuario
+     */
     user: Usuario;
-
+    /**
+     * Arrelgo de roles de usuario
+     */
     roles: string[];
 
+    /**
+     * Envia la informacion al api
+     */
     registro(): void {
         console.log('registro', this.user);
         this.apiService.registrarUsuario(this.user).then(

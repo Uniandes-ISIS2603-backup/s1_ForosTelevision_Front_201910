@@ -13,16 +13,43 @@ import {__await} from "tslib";
 })
 export class CrearMultimediaComponent implements OnInit {
 
+    /**
+     * Lista de archivos seleccionados
+     */
     selectedFiles: FileList;
+    /**
+     * Url de imagenes almacenadas Firebase
+     */
     imagenesUrl: string[];
+    /**
+     * Estado de carga de imagenes
+     */
     imagenesEstado: any[];
+    /**
+     * Portada de imagen
+     */
     portada = '';
+    /**
+     * Porcentaje de carga de portada
+     */
     porcentajePortada = 'Cargar Portada';
+    /**
+     * Video referenciado
+     */
     video: string;
 
+    /**
+     * Constructor de componente
+     * @param multimediaService servicio http
+     * @param router redireccion de componentes
+     * @param toastrService notificacion en UI
+     */
     constructor(private multimediaService: MultimediaService, private router: Router, private toastrService: ToastrService) {
     }
 
+    /**
+     * Evento de inicilizar componente
+     */
     ngOnInit() {
         this.imagenesUrl = new Array();
         this.imagenesEstado = new Array();
@@ -32,6 +59,9 @@ export class CrearMultimediaComponent implements OnInit {
         }
     }
 
+    /**
+     * Almacenamiento de portada firebase
+     */
     async cargarPortada() {
         const file = this.selectedFiles.item(0);
         const cargatarea = this.multimediaService.tareaCloudStorage(file.name, file);
@@ -47,6 +77,10 @@ export class CrearMultimediaComponent implements OnInit {
         });
     }
 
+    /**
+     * Evento de seleccion de archivo
+     * @param event evento de seleccion
+     */
     selectPortada(event) {
         this.selectedFiles = event.target.files;
         if (this.selectedFiles.length > 0) {
@@ -54,6 +88,11 @@ export class CrearMultimediaComponent implements OnInit {
         }
     }
 
+    /**
+     * Seleccion de multiples imagenes
+     * @param event evento de formulario
+     * @param estado de carga unico
+     */
     selectImg(event, estado: any) {
         console.log('evento', event);
         if (event.target.files.length > 0) {
@@ -61,6 +100,11 @@ export class CrearMultimediaComponent implements OnInit {
         }
     }
 
+    /**
+     * Cargar una imagen
+     * @param files lista de archivos
+     * @param estado de carga
+     */
     async cargarImg(files: FileList, estado: any) {
         const file = files.item(0);
         const cargatarea = this.multimediaService.tareaCloudStorage(file.name, file);
@@ -75,6 +119,9 @@ export class CrearMultimediaComponent implements OnInit {
         });
     }
 
+    /**
+     * Guardar la instancia de persistencia en backend
+     */
     async guardar() {
         const m: Multimedia = {id: 0, portada: this.portada, video: this.video, imagenes: this.imagenesUrl};
         await this.multimediaService.registrar(m).then(

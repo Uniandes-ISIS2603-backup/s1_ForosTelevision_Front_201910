@@ -9,19 +9,32 @@ import {Usuario} from '../usuario';
     styleUrls: ['./usuario-detalle.component.css'],
 })
 export class UsuarioDetalleComponent implements OnInit {
-
+    /**
+     * Identificador de usuario
+     */
     public id = 0;
+    /**
+     * Entidad de usuario
+     */
     public usuario: Usuario;
     /**
      * Flag de lazy load y render lista
      */
     public flagLoad = false;
 
-    constructor(activateRoute: ActivatedRoute,
+    /**
+     * Constructor del modulo
+     * @param activateRoute modulo para acceder a params
+     * @param apiService servicio para conexion http
+     */
+    constructor(private activateRoute: ActivatedRoute,
                 private apiService: ApiService) {
         this.id = activateRoute.snapshot.params['id'];
     }
 
+    /**
+     * Carga los datos del modulo
+     */
     private async loadData() {
         await this.apiService.getUsuario(this.id).subscribe(
             (informacion) => {
