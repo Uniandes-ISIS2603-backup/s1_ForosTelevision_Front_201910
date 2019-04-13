@@ -10,6 +10,7 @@ import {CanalDetailComponent} from '../canales/canal-detail/canal-detail.compone
 import {CrearCanalesComponent} from '../canales/crear-canales/crear-canales.component';
 import {EditarCanalesComponent} from '../canales/editar-canales/editar-canales.component';
 import {ListarCanalesComponent} from '../canales/listar-canales/listar-canales.component';
+import {EstadoEditComponent} from '../estado/estado-edit/estado-edit.component';
 import {EstadoListaComponent} from '../estado/estado-lista/estado-lista.component';
 import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
