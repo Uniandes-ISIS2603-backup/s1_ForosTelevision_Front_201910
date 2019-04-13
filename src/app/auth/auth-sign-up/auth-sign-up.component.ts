@@ -1,13 +1,13 @@
-import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-
+import {ApiService} from '../../usuarios/api.service';
+import {Usuario} from '../../usuarios/usuario';
 import { AuthService } from '../auth.service';
-import { User } from '../user';
 
 @Component({
     selector: 'app-auth-sign-up',
     templateUrl: './auth-sign-up.component.html',
-    styleUrls: ['./auth-sign-up.component.css']
+    styleUrls: ['./auth-sign-up.component.css'],
 })
 export class AuthSignUpComponent implements OnInit {
 
@@ -18,27 +18,31 @@ export class AuthSignUpComponent implements OnInit {
     */
     constructor(
         private authService: AuthService,
+        private apiService: ApiService,
         private toastrService: ToastrService,
     ) { }
 
-    user: User;
-
-    roles: String[];
+    user: Usuario;
 
     /**
     * Sign the user up with the selected role
     */
     signUp(): void {
-        this.authService.login(this.user.role);
-        this.toastrService.success('Successfully signed up')
+        this.apiService.registrarUsuario(this.user).then(
+            (user) => {
+                console.log('user registro', user);
+                this.authService.login(this.user.privilegio);
+                this.toastrService.success('Registro exitoso');
+            },
+        );
     }
 
     /**
     * This function will initialize the component
     */
     ngOnInit() {
-        this.user = new User();
-        this.roles = ['Administrator', 'Client'];
+        this.user = new Usuario();
+        this.user.privilegio = 'USUARIO';
     }
 
 }
