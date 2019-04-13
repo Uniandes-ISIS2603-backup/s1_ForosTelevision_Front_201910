@@ -1,22 +1,25 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
+import {CreateComponentOptions} from '@angular/core/src/render3/component';
 import {RouterModule, Routes} from '@angular/router';
 import {NgxPermissionsGuard} from 'ngx-permissions';
-
 import {AdminComponent} from '../admin/admin.component';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
+import {CanalDetailComponent} from '../canales/canal-detail/canal-detail.component';
+import {CrearCanalesComponent} from '../canales/crear-canales/crear-canales.component';
+import {EditarCanalesComponent} from '../canales/editar-canales/editar-canales.component';
+import {ListarCanalesComponent} from '../canales/listar-canales/listar-canales.component';
 import {EstadoListaComponent} from '../estado/estado-lista/estado-lista.component';
 import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
+import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
 import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
 import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.component';
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
-import {EditMultimediaComponent} from "../multimedia/edit-multimedia/edit-multimedia.component";
-import {EstadoEditComponent} from "../estado/estado-edit/estado-edit.component";
 
 const routes: Routes = [
 
@@ -98,6 +101,17 @@ const routes: Routes = [
                 },
             },
             {
+                path: 'canales/lista',
+                pathMatch: 'full',
+                component: ListarCanalesComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+           {
                 path: 'usuario/estado/edit/:id',
                 pathMatch: 'full',
                 component: EstadoEditComponent,
@@ -109,9 +123,31 @@ const routes: Routes = [
                 },
             },
             {
+                path: 'canales/lista/:id',
+                pathMatch: 'full',
+                component: CanalDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+          {
                 path: 'usuario/create',
                 pathMatch: 'full',
                 component: UsuarioCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'canales/editar/:id',
+                pathMatch: 'full',
+                component: EditarCanalesComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
@@ -131,6 +167,17 @@ const routes: Routes = [
                 },
             },
             {
+                path: 'canales/crear/',
+                pathMatch: 'full',
+                component: CrearCanalesComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+          {
                 path: 'multimedia/create',
                 pathMatch: 'full',
                 component: CrearMultimediaComponent,
