@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <!--Lazy loader-->
+  <section class="col-12 loader" *ngIf="!flagLoad">
+    <img src="../../../assets/img/loading.gif">
+    <h4 class="col-12 text-center header-load">Cargando contenido...</h4>
+  </section>
+  <div class="row my-4 mx-4" *ngIf="flagLoad">
+    <h4 class="col-md-12">Canal <b>{{ canal.id }}</b></h4>
+    <p class="text-left col-md-6"><b>Id:</b> {{ canal.id }}</p>
+    <p class="text-left col-md-6"><b>Nombre:</b> {{ canal.nombre }}</p>
+    <p class="text-left col-md-6"><b>Rating:</b> {{ canal.rating }}</p>
+  </div>cd
+  <div class="row justity-content-center mt-4">
+    <a routerLink="/admin/canales/lista/" class="btn btn-warning offset-md-6 col-1">Regresar</a>
+  </div>
+</div>
