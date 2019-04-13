@@ -29,6 +29,7 @@ export class CrearResenasComponent implements OnInit {
   creacion(): void {
 
     console.log('registro', this.resena);
+
     this.resenaService.crearResena(this.resena).then(
         () => {
           this.toastrService.success('Creacion', 'Creacion Realizado');
@@ -41,4 +42,5 @@ export class CrearResenasComponent implements OnInit {
    */
   ngOnInit() {
   }
+
 }
