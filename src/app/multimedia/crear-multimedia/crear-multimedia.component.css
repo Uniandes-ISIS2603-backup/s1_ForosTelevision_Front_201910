@@ -1,0 +1,20 @@
+input[type="file"] {
+    display: none;
+}
+
+.portada {
+    width: 90%;
+    max-height: 120px;
+}
+
+.img-portada {
+    width: 90%;
+    max-height: 220px;
+}
+
+.carga {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="col-md-8 offset-2">
+        <br>
+        <h2 class="text-center">Actualizar Estado</h2>
+        <br>
+        <form name="sign-up" *ngIf="estado!=null" (ngSubmit)="actualizar()" class="row">
+            <div class="form-check col-6">
+                <input type="checkbox" name="name" class="form-check-input" id="name" [(ngModel)]="estado.vista"
+                       ng-true-value="'1'" ng-false-value="'0'" required>
+                <label class="form-check-label" for="name"><b>Vista</b></label>
+            </div>
+            <div class="form-check col-6">
+                <input type="checkbox" name="favorita" class="form-check-input" id="favorita"
+                       [(ngModel)]="estado.favorita"
+                       ng-true-value="'1'" ng-false-value="'0'" required>
+                <label class="form-check-label" for="favorita"><b>Favorita</b></label>
+            </div>
+            <div class="col-12 text-center mt-3">
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </div>
+        </form>
+    </div>
+</div>

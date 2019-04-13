@@ -12,8 +12,13 @@ import {EditarCanalesComponent} from '../canales/editar-canales/editar-canales.c
 import {ListarCanalesComponent} from '../canales/listar-canales/listar-canales.component';
 import {EstadoListaComponent} from '../estado/estado-lista/estado-lista.component';
 import {InvitadoComponent} from '../invitado/invitado.component';
+import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
+import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
+import {ListadoComponent} from '../multimedia/listado/listado.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
+import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
+import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.component';
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
 
 const routes: Routes = [
@@ -106,6 +111,17 @@ const routes: Routes = [
                     },
                 },
             },
+           {
+                path: 'usuario/estado/edit/:id',
+                pathMatch: 'full',
+                component: EstadoEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
             {
                 path: 'canales/lista/:id',
                 pathMatch: 'full',
@@ -117,7 +133,17 @@ const routes: Routes = [
                     },
                 },
             },
-
+          {
+                path: 'usuario/create',
+                pathMatch: 'full',
+                component: UsuarioCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
             {
                 path: 'canales/editar/:id',
                 pathMatch: 'full',
@@ -130,9 +156,53 @@ const routes: Routes = [
                 },
             },
             {
+                path: 'usuario/editar/:id',
+                pathMatch: 'full',
+                component: UsuarioEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
                 path: 'canales/crear/',
                 pathMatch: 'full',
                 component: CrearCanalesComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+          {
+                path: 'multimedia/create',
+                pathMatch: 'full',
+                component: CrearMultimediaComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'multimedia/lista',
+                pathMatch: 'full',
+                component: ListadoComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'multimedia/edit/:id',
+                pathMatch: 'full',
+                component: EditMultimediaComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {

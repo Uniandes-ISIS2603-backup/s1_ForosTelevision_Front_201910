@@ -1,7 +1,8 @@
 <div class="container-fluid">
   <div class="row mx-1 my-4">
       <h2 class="text-left col-sm-12 col-md-9">Usuarios Registrados</h2>
-      <a class="btn col-sm-12 btn-sm btn-outline-primary col-md-1 my-2" href="#" role="button">Crear Usuario</a>
+      <a class="btn col-sm-12 btn-sm btn-outline-primary col-md-1 my-2" routerLink="/admin/usuario/create"
+         role="button">Crear Usuario</a>
   </div>
   <!--Lazy loader-->
   <section class="col-12 loader" [ngClass]="{'ocultar': !flagLoad }">
@@ -29,6 +30,7 @@
               <a [routerLink]="['/admin/usuario/lista/', usuario.id ]" class="btn btn-info btn-action"><i
                       class="icon ion-md-open"></i></a>
               <a [routerLink]="['/admin/usuario/estado/', usuario.id ]" class="btn btn-warning btn-action">Estados</a>
+                <a [routerLink]="['/admin/usuario/editar/', usuario.id ]" class="btn btn-danger btn-action">Editar</a>
             </div>
           </td>
         </tr>

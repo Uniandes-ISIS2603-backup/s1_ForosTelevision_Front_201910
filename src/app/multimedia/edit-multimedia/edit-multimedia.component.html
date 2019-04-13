@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="col-md-8 offset-2 row">
+        <br>
+        <h2 class="text-center col-12 mt-5">Editar portada</h2>
+        <br>
+        <div class="carga col-md-12 col-xs-12 mt-3">
+            <img *ngIf="portada.length>0" src="{{ portada }}" class="img-fluid rounded img-portada my-1">
+            <label class="file btn btn-outline-secondary">
+                <b>{{ porcentajePortada }}</b>
+                <input type="file" accept="image/x-png,image/jpeg" name="portada" class="form-control" id="portada"
+                       (change)="selectPortada($event)">
+            </label>
+        </div>
+        <div class="col-md-12 mt-3 text-center">
+            <button class="btn btn-danger" (click)="guardar()">Guardar Cambios</button>
+        </div>
+    </div>
+</div>

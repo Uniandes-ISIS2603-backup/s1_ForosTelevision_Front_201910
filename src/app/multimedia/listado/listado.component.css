@@ -1,0 +1,32 @@
+.galeria-contenedor {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.portada-contenedor {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.portada {
+    width: 100%;
+}
+
+.galeria {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.galeria img {
+    width: 50%;
+    border-radius: 2px;
+    margin: 5px;
+}
+

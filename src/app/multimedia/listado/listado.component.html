@@ -1,24 +1,24 @@
 <div class="container-fluid">
-  <div class="row mx-1 my-4">
+  <div class="row mx-1 my-5">
     <h2 class="text-left col-sm-12 col-md-9">Multimedia Producción</h2>
+    <a class="btn col-sm-12 btn-sm btn-outline-primary col-md-1 my-2" routerLink="/admin/multimedia/create"
+       role="button">Crear Contenido</a>
   </div>
   <section class="col-12 loader" [ngClass]="{'ocultar': !flagLoad }">
     <img class="img-fluid rounded" src="../../../assets/img/loading.gif">
     <h4 class="col-12 text-center header-load">Cargando contenido...</h4>
   </section>
-  <section class="container-fluid row" [ngClass]="{'ocultar': flagLoad }" *ngFor="let m of multimedia">
-    <div class="col-md-3 col-xs-12">
-      <img src="{{m.portada}}" alt="portada">
-    </div>
-    <div class="col-md-9 row col-xs-12">
-      <div *ngFor="let im of m.imagenees" class="col-xs-12 col-md-1">
-        <img src="{{im.url}}" class="img-fluid rounded" alt="imagenes">
+  <section class="col-12 row" [ngClass]="{'ocultar': flagLoad }">
+    <div class="galeria-contenedor col-md-5 mx-2 my-2 col-xs-12 card text-center" *ngFor="let m of multimedia">
+        <div class=" m-1 portada-contenedor">
+        <img src="{{m.portada}}" alt="portada" class="portada">
+            <a [routerLink]="['/admin/multimedia/edit',m.id]" class="btn btn-secondary mt-2">Editar</a>
       </div>
-    </div>
-    <div class="row">
-      <ul *ngFor="let v of m.videos">
-        <li><a href="{{ v.url }}">{{ v.url }}</a></li>
-      </ul>
+      <div class="col-md-6 row col-xs-12 galeria">
+        <div *ngFor="let im of m.imagenes">
+          <img *ngIf="im.url.length>0" src="{{im.url}}" class="img-fluid rounded" alt="imagenes">
+        </div>
+      </div>
     </div>
   </section>
 </div>
