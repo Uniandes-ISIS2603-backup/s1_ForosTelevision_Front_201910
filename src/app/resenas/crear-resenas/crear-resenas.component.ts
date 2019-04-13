@@ -22,16 +22,12 @@ export class CrearResenasComponent implements OnInit {
    * Entidad que representa un usuario
    */
   resena: Resena;
-  /**
-   * Arrelgo de roles de usuario
-   */
-  roles: string[];
 
   /**
    * Envia la informacion al api
    */
   creacion(): void {
-    console.log('registro', this.resena;
+    console.log('registro', this.resena);
     this.resenaService.crearResena(this.resena).then(
         () => {
           this.toastrService.success('Creacion', 'Creacion Realizado');
@@ -43,8 +39,6 @@ export class CrearResenasComponent implements OnInit {
    * This function will initialize the component
    */
   ngOnInit() {
-    this.resena = new Resena ();
-    this.roles = ['ADMINISTRADOR', 'USUARIO'];
   }
 
 }
