@@ -16,7 +16,6 @@ import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
 import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
-import {ListarResenasComponent} from '../resenas/listar-resenas/listar-resenas.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
 import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
@@ -102,7 +101,6 @@ const routes: Routes = [
                     },
                 },
             },
-
             {
                 path: 'canales/lista',
                 pathMatch: 'full',
@@ -114,7 +112,7 @@ const routes: Routes = [
                     },
                 },
             },
-           {
+            {
                 path: 'usuario/estado/edit/:id',
                 pathMatch: 'full',
                 component: EstadoEditComponent,
@@ -136,7 +134,7 @@ const routes: Routes = [
                     },
                 },
             },
-          {
+            {
                 path: 'usuario/create',
                 pathMatch: 'full',
                 component: UsuarioCreateComponent,
@@ -169,7 +167,18 @@ const routes: Routes = [
                     },
                 },
             },
-          {
+            {
+                path: 'canales/crear/',
+                pathMatch: 'full',
+                component: CrearCanalesComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
                 path: 'multimedia/create',
                 pathMatch: 'full',
                 component: CrearMultimediaComponent,
@@ -213,6 +222,7 @@ const routes: Routes = [
         component: InvitadoComponent,
     },
 ];
+
 @NgModule({
     imports: [
         CommonModule,

@@ -10,13 +10,10 @@ import {NgxPermissionsModule} from 'ngx-permissions';
 import {ToastrModule} from 'ngx-toastr';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 
-<<<<<<< HEAD
-
-=======
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
->>>>>>> ac489bb473d8de4c74ca9efb332d371639c7d2c6
+
 import {AdminComponent} from './admin/admin.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AppComponent} from './app.component';
