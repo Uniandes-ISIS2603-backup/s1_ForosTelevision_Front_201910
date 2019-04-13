@@ -26,7 +26,7 @@ import {MultimediaModule} from './multimedia/multimedia.module';
 import {ResenasModule} from './resenas/resenas.module';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
-import { ProduccionComponent } from './produccion/produccion.component';
+import {ProduccionesComponent} from './producciones/producciones.component';
 import { StaffComponent } from './staff/staff.component';
 import { StaffsComponent } from './staffs/staffs.component';
 import { CrearStaffsComponent } from './staffs/crear-staffs/crear-staffs.component';
