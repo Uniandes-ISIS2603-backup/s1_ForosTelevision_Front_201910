@@ -6,7 +6,7 @@ import {CanalesService} from '../canales.service';
 @Component({
   selector: 'app-editar-canales',
   templateUrl: './editar-canales.component.html',
-  styleUrls: ['./editar-canales.component.css']
+  styleUrls: ['./editar-canales.component.css'],
 })
 export class EditarCanalesComponent implements OnInit {
 
@@ -14,10 +14,6 @@ export class EditarCanalesComponent implements OnInit {
    * Identificador de usuario
    */
   public id = 0;
-  /**
-   * Roles de usuario
-   */
-  public roles: string[];
   /**
    * Entidad de usuario
    */
@@ -54,7 +50,6 @@ export class EditarCanalesComponent implements OnInit {
    */
   ngOnInit() {
     this.loadData();
-    this.roles = ['ADMINISTRADOR', 'USUARIO'];
   }
 
   /**
@@ -62,11 +57,10 @@ export class EditarCanalesComponent implements OnInit {
    */
   actualizar() {
     this.canalService.actualizarCanal(this.canal).subscribe((inf) => {
-      console.log('Edit canal', inf);
+      console.log('Edit canales', inf);
       this.router.navigate(['/admin/canales/lista']);
     });
 
   }
-
 
 }

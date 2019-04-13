@@ -32,7 +32,6 @@ export class CanalesService {
 
   }
 
-
   crearCanal(canal: ICanal): Promise<any> {
     const cuerpo = {
       nombre: canal.nombre,

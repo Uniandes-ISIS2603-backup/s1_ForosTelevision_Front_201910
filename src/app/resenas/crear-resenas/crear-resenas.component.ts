@@ -7,7 +7,7 @@ import {ResenaService} from '../resena.service';
 @Component({
   selector: 'app-crear-resenas',
   templateUrl: './crear-resenas.component.html',
-  styleUrls: ['./crear-resenas.component.css']
+  styleUrls: ['./crear-resenas.component.css'],
 })
 export class CrearResenasComponent implements OnInit {
 
@@ -19,18 +19,15 @@ export class CrearResenasComponent implements OnInit {
   }
 
   /**
-   * Entidad que representa un usuario
+   * Entidad que representa una resena
    */
   resena: Resena;
-  /**
-   * Arrelgo de roles de usuario
-   */
-  roles: string[];
 
   /**
    * Envia la informacion al api
    */
   creacion(): void {
+
     console.log('registro', this.resena);
     this.resenaService.crearResena(this.resena).then(
         () => {
@@ -44,5 +41,4 @@ export class CrearResenasComponent implements OnInit {
    */
   ngOnInit() {
   }
-
 }

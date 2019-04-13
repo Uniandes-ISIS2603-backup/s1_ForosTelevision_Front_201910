@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row mx-1 my-4">
+    <h2 class="text-left col-sm-12 col-md-9">Staffs Registrados</h2>
+    <a class="btn col-sm-12 btn-sm btn-outline-primary col-md-1 my-2" routerLink="/admin/staff/create"
+       role="button">Crear Staff</a>
+  </div>
+  <!--Lazy loader-->
+  <section class="col-12 loader" [ngClass]="{'ocultar': !flagLoad }">
+    <img src="../../../assets/img/loading.gif">
+    <h4 class="col-12 text-center header-load">Cargando contenido...</h4>
+  </section>
+  <table class="table table-striped" [ngClass]="{'ocultar': flagLoad }">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Rol</th>
+      <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let staff of staffs">
+      <td>{{ staff.id }}</td>
+      <td>{{ staff.nombre }}</td>
+      <td>{{ staff.email }}</td>
+      <td>{{ staff.rol }}</td>
+      <td>
+        <div class="btn-container">
+          <a [routerLink]="['/admin/staff/lista/', staff.id ]" class="btn btn-info btn-action"><i
+                  class="icon ion-md-open"></i></a>
+          <a [routerLink]="['/admin/staff/estado/', staff.id ]" class="btn btn-warning btn-action">Estados</a>
+          <a [routerLink]="['/admin/staff/editar/', staff.id ]" class="btn btn-danger btn-action">Editar</a>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
