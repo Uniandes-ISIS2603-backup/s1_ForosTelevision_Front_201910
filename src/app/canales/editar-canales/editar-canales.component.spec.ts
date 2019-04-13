@@ -8,7 +8,7 @@ describe('EditarCanalesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditarCanalesComponent ]
+      declarations: [ EditarCanalesComponent ],
     })
     .compileComponents();
   }));

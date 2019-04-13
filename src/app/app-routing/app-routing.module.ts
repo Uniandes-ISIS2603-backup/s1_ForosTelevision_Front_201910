@@ -9,6 +9,7 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import {CanalDetailComponent} from '../canales/canal-detail/canal-detail.component';
 import {CrearCanalesComponent} from '../canales/crear-canales/crear-canales.component';
 import {EditarCanalesComponent} from '../canales/editar-canales/editar-canales.component';
+import {ListarResenasComponent} from '../resenas/listar-resenas/listar-resenas.component';
 import {ListarCanalesComponent} from '../canales/listar-canales/listar-canales.component';
 import {EstadoListaComponent} from '../estado/estado-lista/estado-lista.component';
 import {InvitadoComponent} from '../invitado/invitado.component';
@@ -95,6 +96,7 @@ const routes: Routes = [
                     },
                 },
             },
+
             {
                 path: 'canales/lista',
                 pathMatch: 'full',
@@ -130,7 +132,7 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'canales/crear/',
+                path: 'canales/create/',
                 pathMatch: 'full',
                 component: CrearCanalesComponent,
                 canActivate: [NgxPermissionsGuard],
@@ -150,7 +152,20 @@ const routes: Routes = [
         path: '**',
         component: InvitadoComponent,
     },
+
+    {
+        path: 'canales/editar/:id',
+        pathMatch: 'full',
+        component: EditarCanalesComponent,
+        canActivate: [NgxPermissionsGuard],
+        data: {
+            permissions: {
+                only: ['ADMIN'],
+            },
+        },
+    },
 ];
+
 
 @NgModule({
     imports: [

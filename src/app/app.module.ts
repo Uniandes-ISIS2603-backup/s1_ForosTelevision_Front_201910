@@ -8,13 +8,14 @@ import {ModalDialogModule} from 'ngx-modal-dialog';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import {ToastrModule} from 'ngx-toastr';
-import {CanalesModule} from './canales/canales.module';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
+
 
 import {AdminComponent} from './admin/admin.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AppComponent} from './app.component';
 import {AuthModule} from './auth/auth.module';
+import {CanalesModule} from './canales/canales.module';
 import {DiaModule} from './dia/dia.module';
 import {EstadoModuleModule} from './estado/estado-module.module';
 import { InvitadoComponent } from './invitado/invitado.component';

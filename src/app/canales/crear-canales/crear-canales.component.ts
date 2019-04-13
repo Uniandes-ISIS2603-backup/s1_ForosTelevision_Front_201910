@@ -30,12 +30,12 @@ export class CrearCanalesComponent implements OnInit {
   /**
    * Envia la informacion al api
    */
-  registro(): void {
+  creacion(): void {
     console.log('registro', this.canal);
     this.canalService.crearCanal(this.canal).then(
         () => {
-          this.toastrService.success('Registro', 'Registro Realizado');
-          this.router.navigate(['/admin/usuario/lista']);
+          this.toastrService.success('Crear un Canal', 'Creacion Realizado');
+          this.router.navigate(['/admin/canales/lista']);
         });
   }
 
