@@ -261,7 +261,7 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'producciones/lista',
+                path: 'produccion/lista',
                 pathMatch: 'full',
                 component: ProduccionesListarComponent,
                 canActivate: [NgxPermissionsGuard],
