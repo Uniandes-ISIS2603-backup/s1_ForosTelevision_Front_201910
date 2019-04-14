@@ -16,6 +16,7 @@ import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
 import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
+import {ProduccionesListarComponent} from '../producciones/producciones-listar/producciones-listar.component';
 import {CrearResenasComponent} from '../resenas/crear-resenas/crear-resenas.component';
 import {EditarResenasComponent} from '../resenas/editar-resenas/editar-resenas.component';
 import {ListarResenasComponent} from '../resenas/listar-resenas/listar-resenas.component';
@@ -252,6 +253,17 @@ const routes: Routes = [
                 path: 'resenas/edit/:id',
                 pathMatch: 'full',
                 component: EditarResenasComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'producciones/lista',
+                pathMatch: 'full',
+                component: ProduccionesListarComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
