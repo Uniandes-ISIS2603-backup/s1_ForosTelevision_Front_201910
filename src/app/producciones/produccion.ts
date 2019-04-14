@@ -1,6 +1,3 @@
-import { Multimedia } from '../multimedia/multimedia';
-import { Productora } from '../productoras/productora';
-
 /**
  * Interface que representa una producción
  */
@@ -10,6 +7,6 @@ export class Produccion {
     descripcion: string;
     clasificacionAudiencia: string;
     calificacionPromedio: number;
-    productora: Productora;
-    multimedia: Multimedia;
+    productora: number;
+    multimedia: number;
 }
