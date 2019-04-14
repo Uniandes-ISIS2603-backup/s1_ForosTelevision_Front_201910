@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 import {Staff} from '../staff';
 import {StaffsService} from '../staffs.service';
 
@@ -15,11 +16,13 @@ export class StaffsEditarComponent implements OnInit {
    * @param staffsService
    * @param activateRoute
    * @param router
+   * @param toastrService
    */
   constructor(
       private staffsService: StaffsService,
       private activateRoute: ActivatedRoute,
       private router: Router,
+      private toastrService: ToastrService,
   ) {
     this.id = activateRoute.snapshot.params['id'];
   }
@@ -49,7 +52,7 @@ export class StaffsEditarComponent implements OnInit {
    */
   private async loadData() {
     await this.staffsService.getStaff(this.id).subscribe((informacion) => {
-      this.usuario = informacion;
+      this.staff = informacion;
       this.flagLoad = true;
     });
   }
@@ -59,7 +62,7 @@ export class StaffsEditarComponent implements OnInit {
    */
   actualizar(): void {
     console.log('Actualizar', this.staff);
-    this.staffsService.actualizarStaff(this.staff).then(
+    this.staffsService.actualizarStaff(this.staff).subscribe(
         () => {
           this.toastrService.success('Se ha editado el staff', 'Actualizar Realizado');
           this.router.navigate(['/admin/staff/lista']);
