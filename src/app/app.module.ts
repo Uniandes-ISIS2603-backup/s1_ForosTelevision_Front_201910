@@ -44,6 +44,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
         EstadoModuleModule,
         DiaModule,
         MultimediaModule,
+        ProduccionesModule,
         HttpClientModule,
         BrowserAnimationsModule,
         ModalDialogModule.forRoot(),
