@@ -4,16 +4,21 @@
     <img src="../../../assets/img/loading.gif">
     <h4 class="col-12 text-center header-load">Cargando contenido...</h4>
   </section>
+  <br />
+  <br />
   <div class="row my-4 mx-4" *ngIf="flagLoad">
     <div class="col-md-6">
-      <img src={{staff.foto}}>
+            <img class="foto-detalle orange" src={{staff.foto}}>
     </div>
     <div class="col-md-6">
-      <br />
-      <h4 class="col-md-12"><b>{{ staff.nombre }}</b></h4>
-      <br />
-      <p class="text-left"><b>Rol: </b> {{ staff.rol }}</p>
-      <p class="text-left"><b></b> {{ staff.descripcion }}</p>
+      <div class="col-md-1"></div>
+      <div class="col-md-11">
+        <br />
+        <h4 class="col-md-12"><b>{{ staff.nombre }}</b></h4>
+        <br />
+        <p class="col-md-12 text-left"><b>Rol: </b> {{ staff.rol }}</p>
+        <p class="col-md-12 text-left"><b></b> {{ staff.descripcion }}</p>
+      </div>
     </div>
   </div>
   <div class="row justity-content-center mt-4">
