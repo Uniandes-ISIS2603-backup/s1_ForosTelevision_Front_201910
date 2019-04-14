@@ -36,7 +36,7 @@ export class ApiService {
             nombre: produccion.nombre,
             descripcion: produccion.descripcion,
             clasificacionAudiencia: produccion.clasificacionAudiencia,
-            calificacionPromedio: produccion.calificacionPromedio,
+            calificacionPromedio: 0,
         };
         return this.http.post(API_URL, cuerpo).toPromise();
     }
@@ -51,7 +51,6 @@ export class ApiService {
             nombre: produccion.nombre,
             descripcion: produccion.descripcion,
             clasificacionAudiencia: produccion.clasificacionAudiencia,
-            calificacionPromedio: produccion.calificacionPromedio,
         };
         return this.http.put(API_URL, cuerpo);
     }
