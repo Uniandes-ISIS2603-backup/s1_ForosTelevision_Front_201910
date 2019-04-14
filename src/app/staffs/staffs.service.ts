@@ -53,7 +53,7 @@ export class StaffsService {
             foto: staff.foto,
             rol: staff.rol,
         };
-        return this.http.put(API_URL, cuerpo);
+        return this.http.put(API_URL + staffs_single + `${staff.id}`, cuerpo);
     }
 
 }

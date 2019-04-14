@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class="col-md-8 offset-2">
     <br>
-    <h2 class="text-center">Registrar staff</h2>
+    <h2 class="text-center">Editar staff</h2>
     <br>
-    <form name="sign-up" (ngSubmit)="f.form.valid && registro()" #f="ngForm" novalidate class="row">
-      <div class="form-group col-md-6 col-xs-12">
+    <form name="sign-up" *ngIf="staff!=null" (ngSubmit)="f.form.valid && actualizar()" #f="ngForm" novalidate
+          class="row">      <div class="form-group col-md-6 col-xs-12">
         <label for="nombre"><b>Nombre</b></label>
         <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="staff.nombre" required>
       </div>
@@ -23,7 +23,7 @@
         <input type="text" name="foto" class="form-control" id="foto" [(ngModel)]="staff.foto" required>
       </div>
       <div class="col-12 text-center mt-3">
-        <button type="submit" class="btn btn-primary">Registrar</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
       </div>
     </form>
   </div>
