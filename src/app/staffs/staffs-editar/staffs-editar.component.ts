@@ -65,7 +65,7 @@ export class StaffsEditarComponent implements OnInit {
     this.staffsService.actualizarStaff(this.staff).subscribe( (inf) => {
       console.log('Edit user ', inf);
       this.router.navigate(['/admin/staff/lista']);
-    }
+    });
   }
 
   /**
