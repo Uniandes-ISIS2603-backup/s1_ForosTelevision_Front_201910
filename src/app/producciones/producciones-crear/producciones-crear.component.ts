@@ -8,11 +8,10 @@ import {ProductorasService} from '../../productoras/productoras.service';
 import {Produccion} from '../produccion';
 import {ProduccionesService} from '../producciones.service';
 
-
 @Component({
   selector: 'app-producciones-crear',
   templateUrl: './producciones-crear.component.html',
-  styleUrls: ['./producciones-crear.component.css']
+  styleUrls: ['./producciones-crear.component.css'],
 })
 export class ProduccionesCrearComponent implements OnInit {
 
@@ -89,6 +88,5 @@ export class ProduccionesCrearComponent implements OnInit {
     this.clasificaciones = ['ADULTOS', 'ADOLESCENTES', 'FAMILIAR', 'INFANTIL'];
     this.loadData();
   }
-
 
 }

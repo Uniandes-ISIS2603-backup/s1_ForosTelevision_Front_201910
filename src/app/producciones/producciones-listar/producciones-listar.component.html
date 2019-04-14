@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="row mx-1 my-4">
-    <h2 class="text-left col-sm-12 col-md-9">Producciones Registradas</h2>
+    <h2 class="text-left col-sm-12 col-md-9">Producciones</h2>
     <a class="btn col-sm-12 btn-sm btn-outline-primary col-md-1 my-2" routerLink="/admin/producciones/crear"
-       role="button">Crear Producción</a>
+       role="button">Registrar Producción</a>
   </div>
   <!--Lazy loader-->
   <section class="col-12 loader" [ngClass]="{'ocultar': !flagLoad }">
@@ -15,7 +15,6 @@
       <th scope="col">Portada</th>
       <th scope="col">ID</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Descripción</th>
       <th scope="col">Clasificación audiencia</th>
       <th scope="col">Calificación promedio</th>
       <th scope="col">Productora</th>
@@ -27,7 +26,6 @@
       <td><img src={{produccion.multimedia.portada}} alt="Smiley face" height="42" width="42"></td>
       <td>{{ produccion.id }}</td>
       <td>{{ produccion.nombre }}</td>
-      <td>{{ produccion.descripcion }}</td>
       <td>{{ produccion.clasificacionAudiencia }}</td>
       <td>{{ produccion.calificacionPromedio }}</td>
       <td><a [routerLink]="['/admin/productoras/lista/', produccion.productora.id ]">{{ produccion.productora.nombre }}</a></td>

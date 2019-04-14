@@ -35,14 +35,14 @@ export class ProduccionesService {
      * @param multimedia
      * @param productora
      */
-    registrarProduccion(produccion: Produccion, multimedia: Multimedia, productora: Productora): Promise<any> {
+    registrarProduccion(produccion: Produccion): Promise<any> {
         const cuerpo = {
             nombre: produccion.nombre,
             descripcion: produccion.descripcion,
             clasificacionAudiencia: produccion.clasificacionAudiencia,
             calificacionPromedio: 0,
-            multimedia,
-            productora,
+            multimedia: produccion.multimedia,
+            productora: produccion.productora,
         };
         return this.http.post(API_URL, cuerpo).toPromise();
     }
@@ -51,14 +51,14 @@ export class ProduccionesService {
      * Actualiza la informacion de un producción
      * @param produccion editado
      */
-    actualizarProduccion(produccion: Produccion, multimedia: Multimedia, productora: Productora) {
+    actualizarProduccion(produccion: Produccion) {
         const cuerpo = {
             id: produccion.id,
             nombre: produccion.nombre,
             descripcion: produccion.descripcion,
             clasificacionAudiencia: produccion.clasificacionAudiencia,
-            multimedia,
-            productora,
+            multimedia: produccion.multimedia,
+            productora: produccion.productora,
         };
         return this.http.put(API_URL, cuerpo);
     }
