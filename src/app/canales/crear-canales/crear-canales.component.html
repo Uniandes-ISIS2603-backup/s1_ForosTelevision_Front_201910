@@ -1,12 +1,25 @@
-
-<form class="form-inline">
-  <div class="form-group mx-sm-3">
-    <label for="inputUser" class="sr-only">Canal</label>
-    <input type="password" class="form-control" id="inputUser" placeholder="User">
+<div class="container-fluid">
+  <div class="col-md-8 offset-2">
+    <br>
+    <h2 class="text-center">Registrar usuario</h2>
+    <br>
+    <form name="sign-up" (ngSubmit)="f.form.valid && creacion()" #f="ngForm" novalidate class="row">
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="username"><b>Nombre</b></label>
+        <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="canal.id" required>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="username"><b>Email</b></label>
+        <input type="text" name="username" class="form-control" id="username" [(ngModel)]="canal.nombre" required>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="password"><b>Contraseña</b></label>
+        <input type="password" name="password" class="form-control" id="password" [(ngModel)]="canal.rating"
+               required>
+      </div>
+      <div class="col-12 text-center mt-3">
+        <button type="submit" class="btn btn-primary">Crear Canal</button>
+      </div>
+    </form>
   </div>
-  <div class="form-group mx-sm-3">
-    <label for="inputPass" class="sr-only">Password</label>
-    <input type="password" class="form-control" id="inputPass" placeholder="Pass">
-  </div>
-  <button type="submit" class="btn btn-primary">Confirm</button>
-</form>
+</div>

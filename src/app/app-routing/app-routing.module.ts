@@ -10,11 +10,16 @@ import {CanalDetailComponent} from '../canales/canal-detail/canal-detail.compone
 import {CrearCanalesComponent} from '../canales/crear-canales/crear-canales.component';
 import {EditarCanalesComponent} from '../canales/editar-canales/editar-canales.component';
 import {ListarCanalesComponent} from '../canales/listar-canales/listar-canales.component';
+import {EstadoEditComponent} from '../estado/estado-edit/estado-edit.component';
 import {EstadoListaComponent} from '../estado/estado-lista/estado-lista.component';
 import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
 import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
+import {CrearResenasComponent} from '../resenas/crear-resenas/crear-resenas.component';
+import {EditarResenasComponent} from '../resenas/editar-resenas/editar-resenas.component';
+import {ListarResenasComponent} from '../resenas/listar-resenas/listar-resenas.component';
+import {ResenasDetailComponent} from '../resenas/resenas-detail/resenas-detail.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
 import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
@@ -111,7 +116,7 @@ const routes: Routes = [
                     },
                 },
             },
-           {
+            {
                 path: 'usuario/estado/edit/:id',
                 pathMatch: 'full',
                 component: EstadoEditComponent,
@@ -133,7 +138,7 @@ const routes: Routes = [
                     },
                 },
             },
-          {
+            {
                 path: 'usuario/create',
                 pathMatch: 'full',
                 component: UsuarioCreateComponent,
@@ -167,7 +172,7 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'canales/crear/',
+                path: 'canales/create/',
                 pathMatch: 'full',
                 component: CrearCanalesComponent,
                 canActivate: [NgxPermissionsGuard],
@@ -177,7 +182,7 @@ const routes: Routes = [
                     },
                 },
             },
-          {
+            {
                 path: 'multimedia/create',
                 pathMatch: 'full',
                 component: CrearMultimediaComponent,
@@ -203,6 +208,50 @@ const routes: Routes = [
                 path: 'multimedia/edit/:id',
                 pathMatch: 'full',
                 component: EditMultimediaComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/lista',
+                pathMatch: 'full',
+                component: ListarResenasComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/lista/:id',
+                pathMatch: 'full',
+                component: ResenasDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/create',
+                pathMatch: 'full',
+                component: CrearResenasComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/edit/:id',
+                pathMatch: 'full',
+                component: EditarResenasComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from '../../usuarios/api.service';
-import {Usuario} from '../../usuarios/usuario';
 import {ICanal} from '../icanal';
 import {CanalesService} from '../canales.service';
 

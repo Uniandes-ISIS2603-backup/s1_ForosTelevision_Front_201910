@@ -8,7 +8,6 @@ import {ListarCanalesComponent} from './listar-canales/listar-canales.component'
 import { EditarCanalesComponent } from './editar-canales/editar-canales.component';
 import { CrearCanalesComponent } from './crear-canales/crear-canales.component';
 
-
 @NgModule({
   imports: [
     CommonModule,
