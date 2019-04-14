@@ -1,5 +1,5 @@
 /**
- * Interface que representa un producción
+ * Interface que representa una producción
  */
 export class Produccion {
     id: number;

@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
-import {Staff} from '../staff';
+import {Produccion} from '../produccion';
 
 @Component({
-  selector: 'app-listar-staffs',
-  templateUrl: './listar-staffs.component.html',
-  styleUrls: ['./listar-staffs.component.css'],
+  selector: 'app-producciones-listar',
+  templateUrl: './producciones-listar.component.html',
+  styleUrls: ['./producciones-listar.component.css']
 })
-export class ListarStaffsComponent implements OnInit {
+export class ProduccionesListarComponent implements OnInit {
 
   /**
-   * Entidad de staffs
+   * Entidad de producción
    */
-  staffs: Staff[];
+  producciones: Produccion[];
+
   /**
    * Flag de lazy load y render lista
    */
@@ -29,8 +30,8 @@ export class ListarStaffsComponent implements OnInit {
    * Carga la informacion de usuarios asyncronicamente
    */
   private async loadData() {
-    await this.apiServive.getStaffs().subscribe((informacion) => {
-      this.staffs = informacion;
+    await this.apiServive.getProducciones().subscribe((informacion) => {
+      this.producciones = informacion;
       this.flagLoad = false;
     });
   }
@@ -43,3 +44,4 @@ export class ListarStaffsComponent implements OnInit {
   }
 
 }
+
