@@ -18,6 +18,18 @@
           <option [value]="clasificacion" *ngFor="let clasificacion of clasificaciones">{{clasificacion}}</option>
         </select>
       </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="multimedia"><b>Clasificación Audiencia</b></label>
+        <select class="custom-select" name="clasificacionAudiencia" id="clasificacionAudiencia" [(ngModel)]="produccion.clasificacionAudiencia" required>
+          <option [value]="clasificacion" *ngFor="let clasificacion of clasificaciones">{{clasificacion}}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="productora"><b>Clasificación Audiencia</b></label>
+        <select class="custom-select" name="clasificacionAudiencia" id="clasificacionAudiencia" [(ngModel)]="produccion.clasificacionAudiencia" required>
+          <option [value]="clasificacion" *ngFor="let clasificacion of clasificaciones">{{clasificacion}}</option>
+        </select>
+      </div>
       <div class="col-12 text-center mt-3">
         <button type="submit" class="btn btn-primary">Registrar</button>
       </div>

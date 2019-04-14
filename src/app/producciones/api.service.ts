@@ -37,6 +37,8 @@ export class ApiService {
             descripcion: produccion.descripcion,
             clasificacionAudiencia: produccion.clasificacionAudiencia,
             calificacionPromedio: 0,
+            multimedia: produccion.multimedia,
+            productora: produccion.productora,
         };
         return this.http.post(API_URL, cuerpo).toPromise();
     }
@@ -51,6 +53,8 @@ export class ApiService {
             nombre: produccion.nombre,
             descripcion: produccion.descripcion,
             clasificacionAudiencia: produccion.clasificacionAudiencia,
+            multimedia: produccion.multimedia,
+            productora: produccion.productora,
         };
         return this.http.put(API_URL, cuerpo);
     }
