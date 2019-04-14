@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from '../api.service';
+import {ProduccionesService} from '../producciones.service';
 import {Produccion} from '../produccion';
 
 @Component({
@@ -23,14 +23,14 @@ export class ProduccionesListarComponent implements OnInit {
    * Constructor del componente
    * @param apiServive servicio de conexión http
    */
-  constructor(private apiServive: ApiService) {
+  constructor(private produccionesService: ProduccionesService) {
   }
 
   /**
    * Carga la informacion de usuarios asyncronicamente
    */
   private async loadData() {
-    await this.apiServive.getProducciones().subscribe((informacion) => {
+    await this.produccionesService.getProducciones().subscribe((informacion) => {
       this.producciones = informacion;
       this.flagLoad = false;
     });

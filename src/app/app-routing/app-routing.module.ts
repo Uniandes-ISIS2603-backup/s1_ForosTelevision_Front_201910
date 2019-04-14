@@ -16,11 +16,14 @@ import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
 import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
+import {ProduccionesCrearComponent} from '../producciones/producciones-crear/producciones-crear.component';
 import {ProduccionesListarComponent} from '../producciones/producciones-listar/producciones-listar.component';
 import {CrearResenasComponent} from '../resenas/crear-resenas/crear-resenas.component';
 import {EditarResenasComponent} from '../resenas/editar-resenas/editar-resenas.component';
 import {ListarResenasComponent} from '../resenas/listar-resenas/listar-resenas.component';
 import {ResenasDetailComponent} from '../resenas/resenas-detail/resenas-detail.component';
+import {StaffsCrearComponent} from '../staffs/staffs-crear/staffs-crear.component';
+import {StaffsListarComponent} from '../staffs/staffs-listar/staffs-listar.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
 import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
@@ -264,6 +267,83 @@ const routes: Routes = [
                 path: 'producciones/lista',
                 pathMatch: 'full',
                 component: ProduccionesListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'producciones/lista/:id',
+                pathMatch: 'full',
+                component: ProduccionesListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'producciones/crear',
+                pathMatch: 'full',
+                component: ProduccionesCrearComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'producciones/editar/:id',
+                pathMatch: 'full',
+                component: ProduccionesListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'staff/lista',
+                pathMatch: 'full',
+                component: StaffsListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'staff/lista/:id',
+                pathMatch: 'full',
+                component: StaffsListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'staff/editar/:id',
+                pathMatch: 'full',
+                component: StaffsListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'staff/crear',
+                pathMatch: 'full',
+                component: StaffsCrearComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
