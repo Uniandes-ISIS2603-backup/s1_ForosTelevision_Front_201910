@@ -30,6 +30,7 @@ import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detal
 import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.component';
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
 import {StaffsEditarComponent} from "../staffs/staffs-editar/staffs-editar.component";
+import {StaffsDetalleComponent} from "../staffs/staffs-detalle/staffs-detalle.component";
 
 const routes: Routes = [
 
@@ -322,7 +323,7 @@ const routes: Routes = [
             {
                 path: 'staff/lista/:id',
                 pathMatch: 'full',
-                component: StaffsListarComponent,
+                component: StaffsDetalleComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
