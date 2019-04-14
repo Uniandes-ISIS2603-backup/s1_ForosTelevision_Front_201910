@@ -12,7 +12,7 @@ import {UsuarioListaComponent} from './usuario-lista/usuario-lista.component';
   imports: [
     CommonModule,
     AppRoutingModule,
-      FormsModule,
+    FormsModule,
   ],
     declarations: [UsuarioListaComponent, UsuarioDetalleComponent, UsuarioEditComponent, UsuarioCreateComponent],
   providers: [ApiService],

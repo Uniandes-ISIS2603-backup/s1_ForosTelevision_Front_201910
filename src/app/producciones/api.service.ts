@@ -16,7 +16,7 @@ export class ApiService {
      * Retorna lista de producciones
      */
     getProducciones(): Observable<any> {
-        return this.http.get<any>(API_URL);
+        return this.http.get<any>(API_URL + producciones_single);
     }
 
     /**
@@ -35,7 +35,7 @@ export class ApiService {
         const cuerpo = {
             nombre: produccion.nombre,
             descripcion: produccion.descripcion,
-            clasificacion: produccion.clasificacion,
+            clasificacionAudiencia: produccion.clasificacionAudiencia,
             calificacionPromedio: produccion.calificacionPromedio,
         };
         return this.http.post(API_URL, cuerpo).toPromise();
@@ -50,7 +50,7 @@ export class ApiService {
             id: produccion.id,
             nombre: produccion.nombre,
             descripcion: produccion.descripcion,
-            clasificacion: produccion.clasificacion,
+            clasificacionAudiencia: produccion.clasificacionAudiencia,
             calificacionPromedio: produccion.calificacionPromedio,
         };
         return this.http.put(API_URL, cuerpo);
