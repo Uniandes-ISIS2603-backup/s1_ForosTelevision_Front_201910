@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="col-md-8 offset-2">
+    <br>
+    <h2 class="text-center">Registrar producción</h2>
+    <br>
+    <form name="sign-up" (ngSubmit)="f.form.valid && registro()" #f="ngForm" novalidate class="row">
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="nombre"><b>Nombre</b></label>
+        <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="staff.nombre" required>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="descripcion"><b>Descripción</b></label>
+        <input type="text" name="descripcion" class="form-control" id="descripcion" [(ngModel)]="staff.descripcion" required>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="rol"><b>Rol</b></label>
+        <select class="custom-select" name="rol" id="rol" [(ngModel)]="staff.rol" required>
+          <option [value]="rol" *ngFor="let rol of roles">{{rol}}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="foto"><b>Foto</b></label>
+        <input type="text" name="foto" class="form-control" id="foto" [(ngModel)]="staff.foto" required>
+      </div>
+      <div class="col-12 text-center mt-3">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>

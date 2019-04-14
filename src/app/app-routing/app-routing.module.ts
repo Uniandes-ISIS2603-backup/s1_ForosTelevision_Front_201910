@@ -22,6 +22,7 @@ import {CrearResenasComponent} from '../resenas/crear-resenas/crear-resenas.comp
 import {EditarResenasComponent} from '../resenas/editar-resenas/editar-resenas.component';
 import {ListarResenasComponent} from '../resenas/listar-resenas/listar-resenas.component';
 import {ResenasDetailComponent} from '../resenas/resenas-detail/resenas-detail.component';
+import {StaffsCrearComponent} from '../staffs/staffs-crear/staffs-crear.component';
 import {StaffsListarComponent} from '../staffs/staffs-listar/staffs-listar.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
 import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
@@ -342,7 +343,7 @@ const routes: Routes = [
             {
                 path: 'staff/crear',
                 pathMatch: 'full',
-                component: StaffsListarComponent,
+                component: StaffsCrearComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
