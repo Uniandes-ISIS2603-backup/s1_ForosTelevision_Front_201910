@@ -23,19 +23,17 @@ import {DiaModule} from './dia/dia.module';
 import {EstadoModuleModule} from './estado/estado-module.module';
 import { InvitadoComponent } from './invitado/invitado.component';
 import {MultimediaModule} from './multimedia/multimedia.module';
-import {ResenasModule} from './resenas/resenas.module';
-import { UsuarioComponent } from './usuario/usuario.component';
-import { UsuariosModule } from './usuarios/usuarios.module';
-import {ProduccionesComponent} from './producciones/producciones.component';
-import { StaffComponent } from './staff/staff.component';
-import { StaffsComponent } from './staffs/staffs.component';
-import { CrearStaffsComponent } from './staffs/crear-staffs/crear-staffs.component';
-import { ListarStaffsComponent } from './staffs/listar-staffs/listar-staffs.component';
-import { StaffsDetailComponent } from './staffs/staffs-detail/staffs-detail.component';
-import { ProduccionesComponent } from './producciones/producciones.component';
 import { CrearProduccionesComponent } from './producciones/crear-producciones/crear-producciones.component';
 import { ListarProduccionesComponent } from './producciones/listar-producciones/listar-producciones.component';
 import { ProduccionesDetailComponent } from './producciones/producciones-detail/producciones-detail.component';
+import {ResenasModule} from './resenas/resenas.module';
+import { StaffComponent } from './staff/staff.component';
+import { CrearStaffsComponent } from './staffs/crear-staffs/crear-staffs.component';
+import { ListarStaffsComponent } from './staffs/listar-staffs/listar-staffs.component';
+import { StaffsDetailComponent } from './staffs/staffs-detail/staffs-detail.component';
+import { StaffsComponent } from './staffs/staffs.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @NgModule({
     declarations: [
@@ -43,13 +41,11 @@ import { ProduccionesDetailComponent } from './producciones/producciones-detail/
         InvitadoComponent,
         UsuarioComponent,
         AdminComponent,
-        ProduccionComponent,
         StaffComponent,
         StaffsComponent,
         CrearStaffsComponent,
         ListarStaffsComponent,
         StaffsDetailComponent,
-        ProduccionesComponent,
         CrearProduccionesComponent,
         ListarProduccionesComponent,
         ProduccionesDetailComponent,
