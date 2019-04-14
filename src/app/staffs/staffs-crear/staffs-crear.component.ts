@@ -52,5 +52,4 @@ export class StaffsCrearComponent implements OnInit {
     this.roles = ['ACTOR', 'DIRECTOR'];
   }
 
-
 }

@@ -332,7 +332,7 @@ const routes: Routes = [
             {
                 path: 'staff/editar/:id',
                 pathMatch: 'full',
-                component: StaffsListarComponent,
+                component: ,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
