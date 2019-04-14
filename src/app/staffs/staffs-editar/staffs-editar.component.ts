@@ -60,7 +60,8 @@ export class StaffsEditarComponent implements OnInit {
   /**
    * Envia la informacion al api
    */
-  actualizar(): void {
+  actualizar() {
+    console.log('Actualizar', this.staff);
     this.staffsService.actualizarStaff(this.staff).subscribe( (inf) => {
       console.log('Editar staff ', inf);
       this.router.navigate(['/admin/staff/lista']);
