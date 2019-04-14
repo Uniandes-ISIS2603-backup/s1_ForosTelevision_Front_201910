@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {ToastrService} from 'ngx-toastr';
-import {Usuario} from '../../usuarios/usuario';
 import {Staff} from '../staff';
 import {StaffsService} from '../staffs.service';
 
@@ -14,15 +12,16 @@ export class StaffsEditarComponent implements OnInit {
 
   /**
    * Constructor for the component
-   * @param authService Auth service provider
-   * @param toastrService The toastr to show messages to the user
+   * @param staffsService
+   * @param activateRoute
+   * @param router
    */
   constructor(
       private staffsService: StaffsService,
-      private toastrService: ToastrService,
+      private activateRoute: ActivatedRoute,
       private router: Router,
   ) {
-    this.id = router.snapshot.params['id'];
+    this.id = activateRoute.snapshot.params['id'];
   }
 
   /**
