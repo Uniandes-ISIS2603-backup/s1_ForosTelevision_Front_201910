@@ -7,7 +7,7 @@ const API_URL = 'http://localhost:8080/s1_foros-api/api/producciones/';
 const producciones_single = '';
 
 @Injectable()
-export class ApiService {
+export class ProduccionesService {
 
     constructor(private http: HttpClient) {
     }

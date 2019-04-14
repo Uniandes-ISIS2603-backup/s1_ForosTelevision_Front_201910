@@ -20,14 +20,14 @@
       </div>
       <div class="form-group col-md-6 col-xs-12">
         <label for="productora"><b>Productora</b></label>
-        <select class="custom-select" name="productora" id="productora" [(ngModel)]="produccion.clasificacionAudiencia" required>
-          <option [value]="clasificacion" *ngFor="let clasificacion of clasificaciones">{{clasificacion}}</option>
+        <select class="custom-select" name="productora" id="productora" [(ngModel)]="produccion.productora" required>
+          <option [value]="productora" *ngFor="let productora of productoras">{{productora.nombre}}</option>
         </select>
       </div>
       <div class="form-group col-md-6 col-xs-12">
         <label for="multimedia"><b>Multimedia</b></label>
-        <select class="custom-select" name="multimedia" id="multimedia" [(ngModel)]="produccion.clasificacionAudiencia" required>
-          <option [value]="clasificacion" *ngFor="let clasificacion of clasificaciones">{{clasificacion}}</option>
+        <select class="custom-select" name="multimedia" id="multimedia" [(ngModel)]="produccion.multimedia" required>
+          <option [value]="multimedia" *ngFor="let multimedia of multimedias">{{multimedia.portada}}</option>
         </select>
       </div>
       <div class="col-12 text-center mt-3">

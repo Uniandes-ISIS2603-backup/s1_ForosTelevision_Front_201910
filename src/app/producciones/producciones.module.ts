@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
-import {ApiService} from '../producciones/api.service';
-import { ProduccionesListarComponent } from './producciones-listar/producciones-listar.component';
+import {ProduccionesService} from '../producciones/producciones.service';
 import { ProduccionesCrearComponent } from './producciones-crear/producciones-crear.component';
+import { ProduccionesListarComponent } from './producciones-listar/producciones-listar.component';
 
 @NgModule({
   declarations: [ProduccionesListarComponent, ProduccionesCrearComponent],
@@ -13,6 +13,6 @@ import { ProduccionesCrearComponent } from './producciones-crear/producciones-cr
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [ApiService],
+  providers: [ProduccionesService],
 })
 export class ProduccionesModule { }
