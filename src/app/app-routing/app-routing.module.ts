@@ -29,6 +29,7 @@ import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
 import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.component';
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
+import {StaffsEditarComponent} from "../staffs/staffs-editar/staffs-editar.component";
 
 const routes: Routes = [
 
@@ -332,7 +333,7 @@ const routes: Routes = [
             {
                 path: 'staff/editar/:id',
                 pathMatch: 'full',
-                component: ,
+                component: StaffsEditarComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
