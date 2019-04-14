@@ -1,13 +1,13 @@
-import { UsuariosModule } from './usuarios.module';
+import { ProduccionesModule } from './producciones.module';
 
 describe('UsuariosModule', () => {
-    let usuariosModule: UsuariosModule;
+    let produccionesModule: ProduccionesModule;
 
     beforeEach(() => {
-        usuariosModule = new UsuariosModule();
+        produccionesModule = new ProduccionesModule();
     });
 
     it('should create an instance', () => {
-        expect(usuariosModule).toBeTruthy();
+        expect(produccionesModule).toBeTruthy();
     });
 });

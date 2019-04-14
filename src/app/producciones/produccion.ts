@@ -5,6 +5,6 @@ export class Produccion {
     id: number;
     nombre: string;
     descripcion: string;
-    clasificacion: string;
+    clasificacionAudiencia: string;
     calificacionPromedio: number;
 }

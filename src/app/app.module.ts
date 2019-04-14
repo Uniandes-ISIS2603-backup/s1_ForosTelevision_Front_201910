@@ -23,7 +23,6 @@ import {DiaModule} from './dia/dia.module';
 import {EstadoModuleModule} from './estado/estado-module.module';
 import { InvitadoComponent } from './invitado/invitado.component';
 import {MultimediaModule} from './multimedia/multimedia.module';
-import { ProduccionComponent } from './produccion/produccion.component';
 import { ProduccionesModule } from './producciones/producciones.module';
 import {ResenasModule} from './resenas/resenas.module';
 import { UsuarioComponent } from './usuario/usuario.component';
@@ -35,7 +34,6 @@ import { UsuariosModule } from './usuarios/usuarios.module';
         InvitadoComponent,
         UsuarioComponent,
         AdminComponent,
-        ProduccionComponent,
     ],
     imports: [
         BrowserModule,
