@@ -6,9 +6,10 @@ import { StaffsListarComponent } from './staffs-listar/staffs-listar.component';
 import {StaffsService} from './staffs.service';
 import { StaffsCrearComponent } from './staffs-crear/staffs-crear.component';
 import { StaffsEditarComponent } from './staffs-editar/staffs-editar.component';
+import { StaffsDetalleComponent } from './staffs-detalle/staffs-detalle.component';
 
 @NgModule({
-  declarations: [StaffsListarComponent, StaffsCrearComponent, StaffsEditarComponent],
+  declarations: [StaffsListarComponent, StaffsCrearComponent, StaffsEditarComponent, StaffsDetalleComponent],
   imports: [
     CommonModule,
     AppRoutingModule,
