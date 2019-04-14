@@ -62,11 +62,10 @@ export class StaffsEditarComponent implements OnInit {
    */
   actualizar(): void {
     console.log('Actualizar', this.staff);
-    this.staffsService.actualizarStaff(this.staff).subscribe(
-        () => {
-          this.toastrService.success('Se ha editado el staff', 'Actualizar Realizado');
-          this.router.navigate(['/admin/staff/lista']);
-        });
+    this.staffsService.actualizarStaff(this.staff).subscribe( (inf) => {
+      console.log('Edit user ', inf);
+      this.router.navigate(['/admin/staff/lista']);
+    }
   }
 
   /**
