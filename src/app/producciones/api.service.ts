@@ -4,7 +4,6 @@ import {Observable} from 'rxjs';
 import {Produccion} from './produccion';
 
 const API_URL = 'http://localhost:8080/s1_foros-api/api/producciones/';
-const producciones = 'all';
 const producciones_single = '';
 
 @Injectable()
@@ -17,7 +16,7 @@ export class ApiService {
      * Retorna lista de producciones
      */
     getProducciones(): Observable<any> {
-        return this.http.get<any>(API_URL + producciones);
+        return this.http.get<any>(API_URL + producciones_single);
     }
 
     /**
