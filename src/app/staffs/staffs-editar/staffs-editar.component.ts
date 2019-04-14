@@ -27,17 +27,13 @@ export class StaffsEditarComponent implements OnInit {
   /**
    * Identificador de staff
    */
-  public id = 0;
+  id = 0;
 
   /**
    * Entidad de usuario
    */
-  public usuario: Usuario = null;
+  staff: Staff = null;
 
-  /**
-   * Entidad que representa un usuario
-   */
-  staff: Staff;
   /**
    * Arrelgo de roles de usuario
    */
