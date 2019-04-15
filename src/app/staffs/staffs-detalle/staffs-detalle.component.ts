@@ -37,7 +37,7 @@ export class StaffsDetalleComponent implements OnInit {
    * Carga los datos del modulo
    */
   private async loadData() {
-    await this.staffsService.getStaff(this.id).subscribe(
+     this.staffsService.getStaff(this.id).subscribe(
         (informacion) => {
           this.staff = informacion;
           this.flagLoad = true;

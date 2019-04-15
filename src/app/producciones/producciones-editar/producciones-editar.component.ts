@@ -61,15 +61,15 @@ export class ProduccionesEditarComponent implements OnInit {
    * Carga de información en el componente
    */
   private async loadData() {
-    await this.multimediaService.getMultimedias().subscribe((informacion) => {
+     this.multimediaService.getMultimedias().subscribe((informacion) => {
       this.multimedias = informacion;
       this.flagLoad = false;
     });
-    await this.productorasService.getProductoras().subscribe((informacion) => {
+     this.productorasService.getProductoras().subscribe((informacion) => {
       this.productoras = informacion;
       this.flagLoad = false;
     });
-    await this.produccionesService.getProduccion(this.id).subscribe((informacion) => {
+     this.produccionesService.getProduccion(this.id).subscribe((informacion) => {
       this.produccion = informacion;
       this.flagLoad = true;
     });

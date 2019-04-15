@@ -51,7 +51,7 @@ export class StaffsEditarComponent implements OnInit {
    * Carga de información en el componente
    */
   private async loadData() {
-    await this.staffsService.getStaff(this.id).subscribe((informacion) => {
+     this.staffsService.getStaff(this.id).subscribe((informacion) => {
       this.staff = informacion;
       this.flagLoad = true;
     });

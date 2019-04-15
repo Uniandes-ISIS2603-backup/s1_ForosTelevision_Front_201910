@@ -30,7 +30,7 @@ export class StaffsListarComponent implements OnInit {
    * Carga la informacion de usuarios asyncronicamente
    */
   private async loadData() {
-    await this.staffsService.getStaffs().subscribe((informacion) => {
+     this.staffsService.getStaffs().subscribe((informacion) => {
       this.staffs = informacion;
       this.flagLoad = false;
     });

@@ -24,7 +24,7 @@ export class CanalDetailComponent implements OnInit {
   }
 
   private async loadData() {
-    await this.apiService.getCanal(this.id).subscribe(
+     this.apiService.getCanal(this.id).subscribe(
         (informacion) => {
           this.canal = informacion;
           this.flagLoad = true;

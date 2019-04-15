@@ -124,7 +124,7 @@ export class CrearMultimediaComponent implements OnInit {
      */
     async guardar() {
         const m: Multimedia = {id: 0, portada: this.portada, video: this.video, imagenes: this.imagenesUrl};
-        await this.multimediaService.registrar(m).then(
+        this.multimediaService.registrar(m).then(
             (info) => {
                 console.log('registro M', info);
                 this.imagenesUrl.forEach((value) => {
