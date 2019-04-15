@@ -39,7 +39,7 @@ export class EditarCanalesComponent implements OnInit {
    * Carga de información en el componente
    */
   private async loadData() {
-    await this.canalService.getCanal(this.id).subscribe((informacion) => {
+      this.canalService.getCanal(this.id).subscribe((informacion) => {
       this.canal = informacion;
       this.flagLoad = true;
     });

@@ -65,7 +65,7 @@ export class CrearMultimediaComponent implements OnInit {
     async cargarPortada() {
         const file = this.selectedFiles.item(0);
         const cargatarea = this.multimediaService.tareaCloudStorage(file.name, file);
-        await cargatarea.percentageChanges().subscribe((porcentaje) => {
+        cargatarea.percentageChanges().subscribe((porcentaje) => {
             this.porcentajePortada = `Cargando % ${Math.round(porcentaje)}`;
         });
         cargatarea.task.then(() => {
@@ -108,7 +108,7 @@ export class CrearMultimediaComponent implements OnInit {
     async cargarImg(files: FileList, estado: any) {
         const file = files.item(0);
         const cargatarea = this.multimediaService.tareaCloudStorage(file.name, file);
-        await cargatarea.percentageChanges().subscribe((porcentaje) => {
+        cargatarea.percentageChanges().subscribe((porcentaje) => {
             estado.estado = `Cargando % ${Math.round(porcentaje)}`;
         });
         cargatarea.task.then(() => {
