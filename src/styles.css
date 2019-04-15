@@ -19,6 +19,18 @@
     color: white;
 }
 
+.dark-blue {
+    background-color: #2C3990;
+}
+
+.orange {
+    background-color: #4C9AB2;
+}
+
+.foto-detalle {
+    border-radius: 3%;
+}
+
 nav {
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);

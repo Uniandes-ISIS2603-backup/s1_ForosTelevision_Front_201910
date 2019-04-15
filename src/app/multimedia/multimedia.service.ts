@@ -16,6 +16,14 @@ export class MultimediaService {
     }
 
     /**
+     * Retorna un multimedia especifico
+     * @param id identificador unico de multimedia
+     */
+    getMultimedia(id: number): Observable<any> {
+        return this.http.get<any>(API_URL + `${id}`);
+    }
+
+    /**
      * Retorna lista de recursos multimedia
      */
     getMultimedias(): Observable<any> {
