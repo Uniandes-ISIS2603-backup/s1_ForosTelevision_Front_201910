@@ -90,8 +90,8 @@ export class ProduccionesEditarComponent implements OnInit {
    * This function will initialize the component
    */
   ngOnInit() {
-    this.loadData();
     this.clasificaciones = ['ADULTOS', 'ADOLESCENTES', 'FAMILIAR', 'INFANTIL'];
+    this.loadData();
   }
 
 }

@@ -32,6 +32,7 @@ import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.c
 import {StaffsEditarComponent} from "../staffs/staffs-editar/staffs-editar.component";
 import {StaffsDetalleComponent} from "../staffs/staffs-detalle/staffs-detalle.component";
 import {ProduccionesDetalleComponent} from "../producciones/producciones-detalle/producciones-detalle.component";
+import {ProduccionesEditarComponent} from '../producciones/producciones-editar/producciones-editar.component';
 
 const routes: Routes = [
 
@@ -302,7 +303,7 @@ const routes: Routes = [
             {
                 path: 'producciones/editar/:id',
                 pathMatch: 'full',
-                component: ProduccionesListarComponent,
+                component: ProduccionesEditarComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
