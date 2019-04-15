@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
+import {Usuario} from '../../usuarios/usuario';
 import {Resena} from '../resena';
 import {ResenaService} from '../resena.service';
 
@@ -28,7 +29,8 @@ export class CrearResenasComponent implements OnInit {
    */
   creacion(): void {
 
-    console.log('creacion', this.resena);
+    console.log('registro', this.resena);
+
     this.resenaService.crearResena(this.resena).then(
         () => {
           this.toastrService.success('Creacion', 'Creacion Realizado');
@@ -40,7 +42,7 @@ export class CrearResenasComponent implements OnInit {
    * This function will initialize the component
    */
   ngOnInit() {
+    this.resena = new Resena();
   }
-
 
 }

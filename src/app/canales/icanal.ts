@@ -1,4 +1,4 @@
-export interface ICanal {
+export class ICanal {
 
     id: number;
     rating: number;
