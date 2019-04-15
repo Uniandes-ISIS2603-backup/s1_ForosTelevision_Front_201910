@@ -1,13 +1,15 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
+import {Multimedia} from '../multimedia/multimedia';
+import {Productora} from '../productoras/productora';
 import {Produccion} from './produccion';
 
 const API_URL = 'http://localhost:8080/s1_foros-api/api/producciones/';
 const producciones_single = '';
 
 @Injectable()
-export class ApiService {
+export class ProduccionesService {
 
     constructor(private http: HttpClient) {
     }
@@ -30,13 +32,17 @@ export class ApiService {
     /**
      * Registra un nuevo producción
      * @param produccion entidad
+     * @param multimedia
+     * @param productora
      */
     registrarProduccion(produccion: Produccion): Promise<any> {
         const cuerpo = {
             nombre: produccion.nombre,
             descripcion: produccion.descripcion,
             clasificacionAudiencia: produccion.clasificacionAudiencia,
-            calificacionPromedio: produccion.calificacionPromedio,
+            calificacionPromedio: 0,
+            multimedia: produccion.multimedia,
+            productora: produccion.productora,
         };
         return this.http.post(API_URL, cuerpo).toPromise();
     }
@@ -51,7 +57,8 @@ export class ApiService {
             nombre: produccion.nombre,
             descripcion: produccion.descripcion,
             clasificacionAudiencia: produccion.clasificacionAudiencia,
-            calificacionPromedio: produccion.calificacionPromedio,
+            multimedia: produccion.multimedia,
+            productora: produccion.productora,
         };
         return this.http.put(API_URL, cuerpo);
     }

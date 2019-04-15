@@ -1,6 +1,6 @@
 import { ProduccionesModule } from './producciones.module';
 
-describe('UsuariosModule', () => {
+describe('ProduccionesModule', () => {
     let produccionesModule: ProduccionesModule;
 
     beforeEach(() => {
