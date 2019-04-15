@@ -55,10 +55,10 @@ export class EditarResenasComponent implements OnInit {
    * Enviar solicitud http para actualizar información
    */
   actualizar() {
-    console.log('canal', this.resena);
+    console.log('resena', this.resena);
     this.resenaService.actualizarResena(this.resena).subscribe((inf) => {
-      console.log('Edit canales', inf);
-      this.router.navigate(['/admin/canales/lista']);
+      console.log('Edit resenas', inf);
+      this.router.navigate(['/admin/resenas/lista']);
     });
 
   }

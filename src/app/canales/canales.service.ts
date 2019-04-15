@@ -21,14 +21,13 @@ export class CanalesService {
     return this.http.get<any>(API_URL + canales_single + `${id}`);
   }
 
-  actualizarCanal(canal: ICanal)
-  {
+  actualizarCanal(canal: ICanal) {
     const cuerpo = {
       id: canal.id,
       nombre: canal.nombre,
-      email: canal.rating,
+      rating: canal.rating,
   };
-    return this.http.put(API_URL, cuerpo);
+    return this.http.put(API_URL + canal.id, cuerpo);
 
   }
 
