@@ -18,5 +18,13 @@ export class ProductorasService {
     getProductoras(): Observable<any> {
         return this.http.get<any>(API_URL + productoras_single);
     }
+    
+    /**
+     * Retorna un producción especifico
+     * @param id identificador unico de producción
+     */
+    getProductora(id: number): Observable<any> {
+        return this.http.get<any>(API_URL + `${id}`);
+    }
 
 }

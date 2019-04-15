@@ -7,9 +7,10 @@ import {ProduccionesService} from '../producciones/producciones.service';
 import {ProductorasService} from '../productoras/productoras.service';
 import { ProduccionesCrearComponent } from './producciones-crear/producciones-crear.component';
 import { ProduccionesListarComponent } from './producciones-listar/producciones-listar.component';
+import { ProduccionesDetalleComponent } from './producciones-detalle/producciones-detalle.component';
 
 @NgModule({
-  declarations: [ProduccionesListarComponent, ProduccionesCrearComponent],
+  declarations: [ProduccionesListarComponent, ProduccionesCrearComponent, ProduccionesDetalleComponent],
   imports: [
     CommonModule,
     AppRoutingModule,
