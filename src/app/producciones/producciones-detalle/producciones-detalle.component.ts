@@ -13,15 +13,17 @@ export class ProduccionesDetalleComponent implements OnInit {
   /**
    * Identificador de usuario
    */
-  public id = 0;
+   id = 0;
+   
   /**
    * Entidad de usuario
    */
-  public produccion: Produccion;
+   produccion: Produccion;
+  
   /**
    * Flag de lazy load y render lista
    */
-  public flagLoad = false;
+   flagLoad = false;
 
   /**
    * Constructor del modulo
@@ -37,15 +39,16 @@ export class ProduccionesDetalleComponent implements OnInit {
    * Carga los datos del modulo
    */
   private async loadData() {
-    await this.produccionesService.getProduccion(this.id).subscribe(
+      await this.produccionesService.getProduccion(this.id).subscribe(
         (informacion) => {
           this.produccion = informacion;
           this.flagLoad = true;
-        });
+        }); 
   }
 
   ngOnInit() {
-    this.loadData();
+    this.loadData();  
+ 
   }
 
 }

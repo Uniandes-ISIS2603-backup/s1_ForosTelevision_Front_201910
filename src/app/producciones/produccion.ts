@@ -10,6 +10,6 @@ export class Produccion {
     descripcion: string;
     clasificacionAudiencia: string;
     calificacionPromedio: number;
-    productora: Productora;
-    multimedia: Multimedia;
+    productora: number;
+    multimedia: number;
 }
