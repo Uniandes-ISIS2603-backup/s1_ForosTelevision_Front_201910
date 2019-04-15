@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
+import {Usuario} from '../../usuarios/usuario';
 import {ICanal} from '../icanal';
 import {CanalesService} from '../canales.service';
 
@@ -40,6 +41,8 @@ export class CrearCanalesComponent implements OnInit {
    * This function will initialize the component
    */
   ngOnInit() {
+    this.canal = new ICanal();
+
   }
 
 }
