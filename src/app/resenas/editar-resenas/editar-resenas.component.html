@@ -6,13 +6,13 @@
     <form name="sign-up" *ngIf="resena!=null" (ngSubmit)="f.form.valid && actualizar()" #f="ngForm" novalidate
           class="row">
       <div class="form-group col-md-6 col-xs-12">
-        <label for="username"><b>Nombre</b></label>
-        <input type="text" name="name" class="form-control" id="name" [(ngModel)]="canal.nombre"
+        <label for="username"><b>Descripcion</b></label>
+        <input type="text" name="name" class="form-control" id="name" [(ngModel)]="resena.descripcion"
                required>
       </div>
       <div class="form-group col-md-6 col-xs-12">
-        <label for="username"><b>Rating</b></label>
-        <input type="text" name="username" class="form-control" id="username" [(ngModel)]="canal.rating"
+        <label for="username"><b>idUsuario</b></label>
+        <input type="text" name="username" class="form-control" id="username" [(ngModel)]="resena.idUsuario"
                required>
       </div>
       <div class="col-12 text-center mt-3">
