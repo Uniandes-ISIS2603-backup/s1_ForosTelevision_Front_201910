@@ -9,12 +9,19 @@ import {Usuario} from '../usuario';
 })
 export class UsuarioListaComponent implements OnInit {
 
+    /**
+     * Entidad de usuario
+     */
     usuarios: Usuario[];
     /**
      * Flag de lazy load y render lista
      */
     flagLoad = false;
 
+    /**
+     * Constructor del componente
+     * @param apiServive servicio de conexión http
+     */
     constructor(private apiServive: ApiService) {
     }
 
@@ -22,13 +29,16 @@ export class UsuarioListaComponent implements OnInit {
      * Carga la informacion de usuarios asyncronicamente
      */
     private async loadData() {
-        await this.apiServive.getUsuarios().subscribe((informacion) => {
+         this.apiServive.getUsuarios().subscribe((informacion) => {
             this.usuarios = informacion;
             this.flagLoad = false;
         });
     }
 
-  ngOnInit() {
-      this.loadData();
-  }
+    /**
+     * Inicializar el componentes
+     */
+    ngOnInit() {
+        this.loadData();
+    }
 }

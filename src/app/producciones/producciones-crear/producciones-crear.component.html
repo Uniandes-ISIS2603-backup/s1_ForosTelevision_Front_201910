@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="col-md-8 offset-2">
+    <br>
+    <h2 class="text-center">Registrar producción</h2>
+    <br>
+    <form name="sign-up" (ngSubmit)="f.form.valid && registro()" #f="ngForm" novalidate class="row">
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="nombre"><b>Nombre</b></label>
+        <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="produccion.nombre" required>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="descripcion"><b>Descripción</b></label>
+        <input type="text" name="descripcion" class="form-control" id="descripcion" [(ngModel)]="produccion.descripcion" required>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="clasificacionAudiencia"><b>Clasificación Audiencia</b></label>
+        <select class="custom-select" name="clasificacionAudiencia" id="clasificacionAudiencia" [(ngModel)]="produccion.clasificacionAudiencia" required>
+          <option [value]="clasificacion" *ngFor="let clasificacion of clasificaciones">{{clasificacion}}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="productora"><b>Productora</b></label>
+        <select class="custom-select" name="productora" id="productora" [(ngModel)]="produccion.productora" required>
+          <option [value]="productora.id" *ngFor="let productora of productoras">{{productora.nombre}}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="multimedia"><b>Multimedia</b></label>
+        <select class="custom-select" name="multimedia" id="multimedia" [(ngModel)]="produccion.multimedia" required>
+          <option [value]="multimedia.id" *ngFor="let multimedia of multimedias">{{multimedia.portada}}</option>
+        </select>
+      </div>
+      <div class="col-12 text-center mt-3">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>

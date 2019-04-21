@@ -30,7 +30,7 @@ export class EstadoListaComponent implements OnInit {
      * Carga la informacion de usuarios asyncronicamente
      */
     private async loadData() {
-        await this.estadoService.getEstados(this.idUser).subscribe((informacion) => {
+         this.estadoService.getEstados(this.idUser).subscribe((informacion) => {
             if (informacion.status === 200) {
                 this.estados = informacion.data;
                 this.flagLoad = false;

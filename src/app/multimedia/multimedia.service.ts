@@ -5,7 +5,6 @@ import {Observable} from 'rxjs';
 import {Multimedia} from './multimedia';
 
 const API_URL = 'http://localhost:8080/s1_foros-api/api/multimedia/';
-const estados = 'multimedia.json';
 const imagenes = 'cambiar/imagen';
 const todas = 'all';
 
@@ -16,22 +15,51 @@ export class MultimediaService {
 
     }
 
+    /**
+     * Retorna un multimedia especifico
+     * @param id identificador unico de multimedia
+     */
+    getMultimedia(id: number): Observable<any> {
+        return this.http.get<any>(API_URL + `${id}`);
+    }
+
+    /**
+     * Retorna lista de recursos multimedia
+     */
     getMultimedias(): Observable<any> {
         return this.http.get<any>(API_URL + todas);
     }
 
+    /**
+     * Almcena un arhivo en Firebase Storage
+     * @param nombreArchivo nombre y extension
+     * @param dato de archivo en binario
+     */
     public tareaCloudStorage(nombreArchivo: string, datos: any) {
         return this.storage.upload(nombreArchivo, datos);
     }
 
+    /**
+     * URL de acceso a partir de nombre archivo
+     * @param nombreArchivo nombre y extension
+     */
     public referenciaCloudStorage(nombreArchivo: string) {
         return this.storage.ref(nombreArchivo);
     }
 
+    /**
+     * Registra una colección de recursos multimedia
+     * @param multimedia instancia cargada
+     */
     public registrar(multimedia: Multimedia): Promise<any> {
         return this.http.post(API_URL, multimedia).toPromise();
     }
 
+    /**
+     * Registra una imagen en un recurso multimedia
+     * @param id identificador multimedia
+     * @param url de imagen
+     */
     public registrarImagenes(id: number, url: string) {
         console.log('imagen', url);
         this.http.post(API_URL + imagenes, {

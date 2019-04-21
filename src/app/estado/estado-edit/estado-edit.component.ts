@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ToastrService} from "ngx-toastr";
+import {ToastrService} from 'ngx-toastr';
 import {Estado} from '../estado';
 import {EstadoServiceService} from '../estado-service.service';
 
@@ -10,10 +10,22 @@ import {EstadoServiceService} from '../estado-service.service';
     styleUrls: ['./estado-edit.component.css'],
 })
 export class EstadoEditComponent implements OnInit {
-
+    /**
+     * Instancia de estado
+     */
     estado: Estado;
+    /**
+     * Identificador de estado
+     */
     id: number;
 
+    /**
+     * Constructor de componente
+     * @param estadoService servicio http
+     * @param toastrService notificación UI
+     * @param router redirección de componentes
+     * @param activateRoute get params URL
+     */
     constructor(private estadoService: EstadoServiceService,
                 private toastrService: ToastrService,
                 private router: Router,
@@ -25,8 +37,11 @@ export class EstadoEditComponent implements OnInit {
         this.loadData();
     }
 
+    /**
+     * Carga de información
+     */
     private async loadData() {
-        await this.estadoService.getEstados(this.id).subscribe(
+         this.estadoService.getEstados(this.id).subscribe(
             (informacion: any) => {
                 console.table('inf', this.id);
                 informacion.data.forEach((k) => {
@@ -38,6 +53,9 @@ export class EstadoEditComponent implements OnInit {
             });
     }
 
+    /**
+     * Actualización de referencia
+     */
     actualizar(): void {
         this.estadoService.updateEstado(this.estado);
         this.toastrService.success('Registro', 'Estado Actualizado');

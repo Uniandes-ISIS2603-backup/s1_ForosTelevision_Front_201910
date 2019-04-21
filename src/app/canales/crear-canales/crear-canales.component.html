@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="col-md-8 offset-2">
+    <br>
+    <h2 class="text-center">Registrar canal</h2>
+    <br>
+    <form name="sign-up" (ngSubmit)="f.form.valid && creacion()" #f="ngForm" novalidate class="row">
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="username"><b>Nombre</b></label>
+        <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="canal.nombre" required>
+      </div>
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="username"><b>Rating</b></label>
+        <input type="text" name="username" class="form-control" id="username" [(ngModel)]="canal.rating" required>
+      </div>
+      <div class="col-12 text-center mt-3">
+        <button type="submit" class="btn btn-primary">Crear Canal</button>
+      </div>
+    </form>
+  </div>
+</div>
