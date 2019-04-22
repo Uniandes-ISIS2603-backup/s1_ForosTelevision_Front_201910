@@ -6,7 +6,6 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
 import {Emision} from './emision';
-import {EmisionDetail} from './emision-detail';
 import {environment} from '../../environments/environment';
 
 /**
@@ -24,7 +23,7 @@ const emisiones = '/emisiones';
 * El proveedor de servicios de las emisiones.
 */
 @Injectable()
-export class AuthorService {
+export class EmisionService {
     
     /**
     * Constructor del servicio
@@ -44,8 +43,8 @@ export class AuthorService {
     * Función para obtener el detalle de una emisión.
     * @returns detalle de una emisión.
     */
-    getEmisionDetail(emisionId): Observable<EmisionDetail> {
-        return this.http.get<EmisionDetail>(API_URL + emisiones + '/' + emisionId);
+    getEmisionDetail(emisionId): Observable<Emision> {
+        return this.http.get<Emision>(API_URL + emisiones + '/' + emisionId);
     }
     
     /**
@@ -62,8 +61,8 @@ export class AuthorService {
     * @param emision La nueva información de la emisión.
     * @returns La emisión actualizada
     */
-    updateEmision(emision): Observable<EmisionDetail> {
-        return this.http.put<EmisionDetail>(API_URL + emisiones + '/' + emision.id, emision);
+    updateEmision(emision): Observable<Emision> {
+        return this.http.put<Emision>(API_URL + emisiones + '/' + emision.id, emision);
     }
     
 }

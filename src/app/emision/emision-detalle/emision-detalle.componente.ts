@@ -4,19 +4,19 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EmisionService } from '../emision.service';
-import { EmisionDetail } from '../emision-detail';
+import { Emision } from '../emision';
 
 @Component({
     selector: 'emision-detail',
     templateUrl: './emision-detail.component.html',
     styleUrls: ['./emision-detail.component.css']
 })
-export class EmisionDetailComponent implements OnInit {
+export class EmisionDetalleComponent implements OnInit {
 
     /**
     * Detalle de la emisión
     */
-    @Input() emisionDetail: EmisionDetail;
+    @Input() emision: Emision;
     
     /**
     * Constructor 
@@ -32,24 +32,23 @@ export class EmisionDetailComponent implements OnInit {
     emision_id: number;
     
     /**
-    * The method which obtains the author whose details we want to show
+    * Método que mostrará el detalle de la emisión.
     */
-    getAuthorDetail(): void {
-        this.authorService.getAuthorDetail(this.author_id)
-            .subscribe(authorDetail => {
-                this.authorDetail = authorDetail
+    getEmisionDetail(): void {
+        this.emisionService.getEmisionDetail(this.emision_id)
+            .subscribe(emision => {
+                this.emision = emision
             });
     }
    
     /**
-    * The method which initializes the component.
-    * We need to create the author so it is never considered as undefined
+    * Método que inicializa el componente.
     */
     ngOnInit() {
-        this.author_id = +this.route.snapshot.paramMap.get('id');
-        if (this.author_id){
-        this.authorDetail = new AuthorDetail();
-        this.getAuthorDetail();
+        this.emision_id = +this.route.snapshot.paramMap.get('id');
+        if (this.emision_id){
+        this.emision = new Emision();
+        this.getEmisionDetail();
         }
     }
 }

@@ -10,7 +10,7 @@ import {Emision} from '../emision';
 @Component({
     selector: 'emision-create',
     templateUrl: './emision-crear.component.html',
-    providers: [DatePipe]
+    providers: [DatePipe],
 })
 export class EmisionCrearComponent implements OnInit {
 
@@ -46,15 +46,15 @@ export class EmisionCrearComponent implements OnInit {
         let date1 : Date = new Date(this.emision.fechaInicio.day, this.emision.fechaInicio.month - 1, this.emision.fechaInicio.year);
         let date2 : Date = new Date(this.emision.fechaFin.day, this.emision.fechaFin.month - 1, this.emision.fechaFin.year);
         
-        this.emision.fechaInicio = this.datePipe.transform(date1, 'dd-MM-yyyy');
-        this.emision.fechaFin = this.datePipe.transform(date2, 'dd-MM-yyyy');
+        this.emision.fechaInicio = this.dp.transform(date1, 'dd-MM-yyyy');
+        this.emision.fechaFin = this.dp.transform(date2, 'dd-MM-yyyy');
         
         console.log(this.emision);
         this.emisionService.createEmision(this.emision)
             .subscribe((emision) => {
                 this.emision = emision;
                 this.create.emit();
-                this.toastrService.success("La emisión fue creada", "Creation");
+                this.tService.success("La emisión fue creada", "Creation");
 
             });
         return this.emision;

@@ -6,21 +6,21 @@ import {DatePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 
 import {EmisionService} from '../emision.service';
-import {EmisionDetail} from '../emision-detail';
+import {Emision} from '../emision';
 
 /**
 * Componente del módulo.
 */
 @Component({
-    selector: 'emision-edit';
-    templateUrl: './emision-editar.componente.html';
-    providers: [];
+    selector: 'emision-edit',
+    templateUrl: './emision-editar.componente.html',
+    providers: [],
 })
 
 /**
 * Clase del módulo
 */
-export class EmisionEditComponent implements OnInit, OnChanges{
+export class EmisionEditarComponent implements OnInit, OnChanges{
 
     /**
     * Constructor del módulo.
@@ -34,7 +34,7 @@ export class EmisionEditComponent implements OnInit, OnChanges{
     /**
     * La emisión que será recibida
     */
-    @Input() emision: EmisionDetail;
+    @Input() emision: Emision;
     
     /**
     * Salida que se recibe cuando se actualiza la emisión.
@@ -66,7 +66,7 @@ export class EmisionEditComponent implements OnInit, OnChanges{
     * Método que cancela la operación.
     */
     cancelEdition(): void{
-        this.cancel().emit();
+        this.cancel.emit();
     }
     
     ngOnInit(){

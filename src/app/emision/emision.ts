@@ -1,3 +1,5 @@
+import {ICanal} from '../canales/icanal';
+import {Dia} from '../dia/dia';
 /** 
  * Clase Emisión
  */
@@ -6,7 +8,7 @@
     /**
     * Id de la emisión.
     */
-    emision: id;
+    id: number;
     
     /**
     * Rating de la emisión
@@ -22,6 +24,16 @@
     * Fecha final de la emisión
     */
     fechaFin: any;
+    
+    /**
+    * Dias de la emisión
+    */
+    dias: Dia[];
+    
+    /**
+    * Canal de la emisión.
+    */
+    canal: ICanal;
  
  }
 
