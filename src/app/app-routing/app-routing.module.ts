@@ -10,11 +10,18 @@ import {CanalDetailComponent} from '../canales/canal-detail/canal-detail.compone
 import {CrearCanalesComponent} from '../canales/crear-canales/crear-canales.component';
 import {EditarCanalesComponent} from '../canales/editar-canales/editar-canales.component';
 import {ListarCanalesComponent} from '../canales/listar-canales/listar-canales.component';
+import {CategoriaCreateComponent} from '../categoria/categoria-create/categoria-create.component';
+import {CategoriaEditComponent} from '../categoria/categoria-edit/categoria-edit.component';
+import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
+import {EstadoEditComponent} from '../estado/estado-edit/estado-edit.component';
 import {EstadoListaComponent} from '../estado/estado-lista/estado-lista.component';
 import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
 import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
+import {ProductoraCreateComponent} from '../productora/productora-create/productora-create.component';
+import {ProductoraEditComponent} from '../productora/productora-edit/productora-edit.component';
+import {ProductoraListComponent} from '../productora/productora-list/productora-list.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
 import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
@@ -203,6 +210,72 @@ const routes: Routes = [
                 path: 'multimedia/edit/:id',
                 pathMatch: 'full',
                 component: EditMultimediaComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'categoria/lista',
+                pathMatch: 'full',
+                component: CategoriaListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'categoria/editar/:id',
+                pathMatch: 'full',
+                component: CategoriaEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'categoria/create',
+                pathMatch: 'full',
+                component: CategoriaCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'productora/lista',
+                pathMatch: 'full',
+                component: ProductoraListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'productora/editar/:id',
+                pathMatch: 'full',
+                component: ProductoraEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'productora/create',
+                pathMatch: 'full',
+                component: ProductoraCreateComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {

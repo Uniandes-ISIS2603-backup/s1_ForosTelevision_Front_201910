@@ -7,7 +7,7 @@ import {ResenaService} from '../resena.service';
 @Component({
   selector: 'app-crear-resenas',
   templateUrl: './crear-resenas.component.html',
-  styleUrls: ['./crear-resenas.component.css']
+  styleUrls: ['./crear-resenas.component.css'],
 })
 export class CrearResenasComponent implements OnInit {
 
@@ -22,16 +22,12 @@ export class CrearResenasComponent implements OnInit {
    * Entidad que representa un usuario
    */
   resena: Resena;
-  /**
-   * Arrelgo de roles de usuario
-   */
-  roles: string[];
 
   /**
    * Envia la informacion al api
    */
-  creacion(): void {
-    console.log('registro', this.resena;
+  creacion() {
+    console.log('registro', this.resena);
     this.resenaService.crearResena(this.resena).then(
         () => {
           this.toastrService.success('Creacion', 'Creacion Realizado');
@@ -43,8 +39,7 @@ export class CrearResenasComponent implements OnInit {
    * This function will initialize the component
    */
   ngOnInit() {
-    this.resena = new Resena ();
-    this.roles = ['ADMINISTRADOR', 'USUARIO'];
+    this.resena = new Resena();
   }
 
 }

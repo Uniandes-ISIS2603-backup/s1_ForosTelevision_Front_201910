@@ -9,6 +9,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import {ToastrModule} from 'ngx-toastr';
 import {CanalesModule} from './canales/canales.module';
+import {CategoriaModule} from './categoria/categoria.module';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 
 import {AngularFireModule} from '@angular/fire';
@@ -22,6 +23,7 @@ import {DiaModule} from './dia/dia.module';
 import {EstadoModuleModule} from './estado/estado-module.module';
 import { InvitadoComponent } from './invitado/invitado.component';
 import {MultimediaModule} from './multimedia/multimedia.module';
+import {ProductoraModule} from './productora/productora.module';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
 
@@ -40,6 +42,8 @@ import { UsuariosModule } from './usuarios/usuarios.module';
         UsuariosModule,
         EstadoModuleModule,
         DiaModule,
+        ProductoraModule,
+        CategoriaModule,
         MultimediaModule,
         HttpClientModule,
         BrowserAnimationsModule,
