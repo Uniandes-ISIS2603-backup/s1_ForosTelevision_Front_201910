@@ -6,7 +6,7 @@ import {ProduccionesService} from '../producciones.service';
 @Component({
   selector: 'app-producciones-detalle',
   templateUrl: './producciones-detalle.component.html',
-  styleUrls: ['./producciones-detalle.component.css']
+  styleUrls: ['./producciones-detalle.component.css'],
 })
 export class ProduccionesDetalleComponent implements OnInit {
 
@@ -14,12 +14,12 @@ export class ProduccionesDetalleComponent implements OnInit {
    * Identificador de usuario
    */
    id = 0;
-   
+
   /**
    * Entidad de usuario
    */
    produccion: Produccion;
-  
+
   /**
    * Flag de lazy load y render lista
    */
@@ -39,16 +39,15 @@ export class ProduccionesDetalleComponent implements OnInit {
    * Carga los datos del modulo
    */
   private async loadData() {
-      await this.produccionesService.getProduccion(this.id).subscribe(
+       this.produccionesService.getProduccion(this.id).subscribe(
         (informacion) => {
           this.produccion = informacion;
           this.flagLoad = true;
-        }); 
+        });
   }
 
   ngOnInit() {
-    this.loadData();  
- 
+    this.loadData();
   }
 
 }

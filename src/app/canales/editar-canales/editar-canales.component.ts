@@ -39,7 +39,7 @@ export class EditarCanalesComponent implements OnInit {
    * Carga de información en el componente
    */
   private async loadData() {
-    await this.canalService.getCanal(this.id).subscribe((informacion) => {
+      this.canalService.getCanal(this.id).subscribe((informacion) => {
       this.canal = informacion;
       this.flagLoad = true;
     });
@@ -57,7 +57,7 @@ export class EditarCanalesComponent implements OnInit {
    */
   actualizar() {
       console.log('canal', this.canal);
-    this.canalService.actualizarCanal(this.canal).subscribe((inf) => {
+      this.canalService.actualizarCanal(this.canal).subscribe((inf) => {
       console.log('Edit canales', inf);
       this.router.navigate(['/admin/canales/lista']);
     });

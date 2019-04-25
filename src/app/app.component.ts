@@ -7,35 +7,30 @@ import { AuthService } from './auth/auth.service';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
 
     /**
      * The title that appears on the NavBar and the web browser
      */
-    title: String;
+    title: string;
 
     /**
      * Assigns a title to the web page
      */
     ngOnInit(): void {
-        this.title = "Foros de TV";
+        this.title = 'Foros de TV';
         this.authService.start();
     }
 
-       /**
+    /**
      * @ignore
      */
     constructor(private authService: AuthService) { }
 
     logout(): void {
-        this.authService.logout()
+        this.authService.logout();
     }
-
 }
-
-
-
-
 
