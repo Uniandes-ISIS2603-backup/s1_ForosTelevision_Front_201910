@@ -256,7 +256,7 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'resenas/edit/:id',
+                path: 'resenas/editar/:id',
                 pathMatch: 'full',
                 component: EditarResenasComponent,
                 canActivate: [NgxPermissionsGuard],
