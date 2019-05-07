@@ -12,18 +12,18 @@
   <table class="table table-striped" [ngClass]="{'ocultar': flagLoad }">
     <thead class="thead-dark">
     <tr>
-      <th scope="col">Foto</th>
       <th scope="col">ID</th>
       <th scope="col">Nombre</th>
+      <th scope="col">Foto</th>
       <th scope="col">Rol</th>
       <th scope="col">Acciones</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let staff of staffs">
-      <td><img src={{staff.foto}} alt="Smiley face" height="200" width="200"></td>
       <td>{{ staff.id }}</td>
       <td>{{ staff.nombre }}</td>
+      <td><img src={{staff.foto}} alt="Smiley face" class="img-thumbnail" height="200" width="120"></td>
       <td>{{ staff.rol }}</td>
       <td>
         <div class="btn-container">

@@ -42,7 +42,7 @@ export class UsuarioEditComponent implements OnInit {
      * Carga de información en el componente
      */
     private async loadData() {
-        await this.apiService.getUsuario(this.id).subscribe((informacion) => {
+         this.apiService.getUsuario(this.id).subscribe((informacion) => {
             this.usuario = informacion;
             this.flagLoad = true;
         });
@@ -61,7 +61,6 @@ export class UsuarioEditComponent implements OnInit {
      */
     actualizar() {
         this.apiService.actualizarUsuario(this.usuario).subscribe((inf) => {
-            console.log('Edit user ', inf);
             this.router.navigate(['/admin/usuario/lista']);
         });
 

@@ -70,11 +70,11 @@ export class ProduccionesCrearComponent implements OnInit {
    * Carga la informacion de usuarios asyncronicamente
    */
   private async loadData() {
-    await this.multimediaService.getMultimedias().subscribe((informacion) => {
+     this.multimediaService.getMultimedias().subscribe((informacion) => {
       this.multimedias = informacion;
       this.flagLoad = false;
     });
-    await this.productorasService.getProductoras().subscribe((informacion) => {
+     this.productorasService.getProductoras().subscribe((informacion) => {
       this.productoras = informacion;
       this.flagLoad = false;
     });
