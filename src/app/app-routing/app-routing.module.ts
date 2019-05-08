@@ -1,6 +1,5 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {CreateComponentOptions} from '@angular/core/src/render3/component';
 import {RouterModule, Routes} from '@angular/router';
 import {NgxPermissionsGuard} from 'ngx-permissions';
 import {AdminComponent} from '../admin/admin.component';
@@ -19,9 +18,15 @@ import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
 import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
+import {ProduccionesDetalleComponent} from '../producciones/producciones-detalle/producciones-detalle.component';
+import {ProduccionesListarComponent} from '../producciones/producciones-listar/producciones-listar.component';
 import {ProductoraCreateComponent} from '../productora/productora-create/productora-create.component';
 import {ProductoraEditComponent} from '../productora/productora-edit/productora-edit.component';
 import {ProductoraListComponent} from '../productora/productora-list/productora-list.component';
+import {CrearResenasComponent} from '../resenas/crear-resenas/crear-resenas.component';
+import {EditarResenasComponent} from '../resenas/editar-resenas/editar-resenas.component';
+import {ListarResenasComponent} from '../resenas/listar-resenas/listar-resenas.component';
+import {ResenasDetailComponent} from '../resenas/resenas-detail/resenas-detail.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
 import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
@@ -231,7 +236,6 @@ const routes: Routes = [
                 },
             },
             {
-<<<<<<< HEAD
                 path: 'resenas/lista',
                 pathMatch: 'full',
                 component: ListarResenasComponent,
@@ -298,10 +302,7 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'producciones/crear',
-=======
                 path: 'categoria/lista',
->>>>>>> 9b1f7d705875e9770e635c87f758edacfbed2668
                 pathMatch: 'full',
                 component: CategoriaListComponent,
                 canActivate: [NgxPermissionsGuard],
