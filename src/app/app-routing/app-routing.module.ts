@@ -27,6 +27,8 @@ import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
 import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.component';
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
+import {UsuarioRecomendacionComponent} from '../usuarios/usuario-recomendacion/usuario-recomendacion.component';
+import {UsuarioSeguirComponent} from '../usuarios/usuario-seguir/usuario-seguir.component';
 
 const routes: Routes = [
 
@@ -57,10 +59,21 @@ const routes: Routes = [
     },
     {
         path: 'usuario',
+        component: UsuarioComponent,
         children: [
             {
-                path: 'home',
-                component: UsuarioComponent,
+                path: 'seguir',
+                component: UsuarioSeguirComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT'],
+                    },
+                },
+            },
+            {
+                path: 'recomendacion',
+                component: UsuarioRecomendacionComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
