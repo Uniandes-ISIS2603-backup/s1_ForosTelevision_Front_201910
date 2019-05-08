@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row mx-1 my-4">
+    <h2 class="text-left col-sm-12 col-md-9">Seguir Usuarios</h2>
+  </div>
+  <!--Lazy loader-->
+  <section class="col-12 loader" [ngClass]="{'ocultar': !flagLoad }">
+    <img src="../../../assets/img/loading.gif">
+    <h4 class="col-12 text-center header-load">Cargando contenido...</h4>
+  </section>
+  <div class="row">
+    <div class="col-md-2 mx-2 my-2 card custom-card" *ngFor="let usuario of usuarios">
+      <img class="custom-content" src="../../../assets/img/user_ic.png">
+      <h5 class="text-center my-2 custom-content">{{usuario.nombre}}</h5>
+      <p class="text-center custom-content">{{usuario.email}}</p>
+      <button class="btn btn-danger option" (click)="seguirUsuario(usuario.id)">Seguir</button>
+    </div>
+  </div>
+</div>

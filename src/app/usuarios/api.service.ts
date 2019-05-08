@@ -1,4 +1,4 @@
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Usuario} from './usuario';
@@ -55,6 +55,35 @@ export class ApiService {
             clave: usuario.password,
         };
         return this.http.put(API_URL, cuerpo);
+    }
+
+    /**
+     * Seguir un usuario
+     */
+    seguirUsuario(idUsuario: string, idSeguidor: string) {
+        const  body = {
+            id_usuario: idUsuario,
+            id_seguidor: idSeguidor,
+        };
+        return this.http.post(API_URL + 'seguir', body).toPromise();
+    }
+
+    /**
+     * Enviar recomendación
+     */
+    enviarRecomendacion(email: string) {
+        const headerDict = {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'access-control-allow-headers,access-control-allow-origin,content-type',
+        };
+
+        const requestOptions = {
+            headers: new HttpHeaders(headerDict),
+        };
+        const  body = {
+          email:email,
+        };
+        return this.http.post('http://app-colombia.com/panini/email.php', body, requestOptions).toPromise();
     }
 
 }
