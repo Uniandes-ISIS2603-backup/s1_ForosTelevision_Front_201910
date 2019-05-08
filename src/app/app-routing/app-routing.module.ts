@@ -1,6 +1,5 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {CreateComponentOptions} from '@angular/core/src/render3/component';
 import {RouterModule, Routes} from '@angular/router';
 import {NgxPermissionsGuard} from 'ngx-permissions';
 import {AdminComponent} from '../admin/admin.component';
@@ -19,14 +18,22 @@ import {InvitadoComponent} from '../invitado/invitado.component';
 import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-multimedia.component';
 import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
+import {ProduccionesDetalleComponent} from '../producciones/producciones-detalle/producciones-detalle.component';
+import {ProduccionesListarComponent} from '../producciones/producciones-listar/producciones-listar.component';
 import {ProductoraCreateComponent} from '../productora/productora-create/productora-create.component';
 import {ProductoraEditComponent} from '../productora/productora-edit/productora-edit.component';
 import {ProductoraListComponent} from '../productora/productora-list/productora-list.component';
+import {CrearResenasComponent} from '../resenas/crear-resenas/crear-resenas.component';
+import {EditarResenasComponent} from '../resenas/editar-resenas/editar-resenas.component';
+import {ListarResenasComponent} from '../resenas/listar-resenas/listar-resenas.component';
+import {ResenasDetailComponent} from '../resenas/resenas-detail/resenas-detail.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
 import {UsuarioCreateComponent} from '../usuarios/usuario-create/usuario-create.component';
 import {UsuarioDetalleComponent} from '../usuarios/usuario-detalle/usuario-detalle.component';
 import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.component';
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
+import {UsuarioRecomendacionComponent} from '../usuarios/usuario-recomendacion/usuario-recomendacion.component';
+import {UsuarioSeguirComponent} from '../usuarios/usuario-seguir/usuario-seguir.component';
 
 const routes: Routes = [
 
@@ -57,10 +64,21 @@ const routes: Routes = [
     },
     {
         path: 'usuario',
+        component: UsuarioComponent,
         children: [
             {
-                path: 'home',
-                component: UsuarioComponent,
+                path: 'seguir',
+                component: UsuarioSeguirComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT'],
+                    },
+                },
+            },
+            {
+                path: 'recomendacion',
+                component: UsuarioRecomendacionComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
@@ -210,6 +228,72 @@ const routes: Routes = [
                 path: 'multimedia/edit/:id',
                 pathMatch: 'full',
                 component: EditMultimediaComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/lista',
+                pathMatch: 'full',
+                component: ListarResenasComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/lista/:id',
+                pathMatch: 'full',
+                component: ResenasDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/create',
+                pathMatch: 'full',
+                component: CrearResenasComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/editar/:id',
+                pathMatch: 'full',
+                component: EditarResenasComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'producciones/lista',
+                pathMatch: 'full',
+                component: ProduccionesListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'producciones/lista/:id',
+                pathMatch: 'full',
+                component: ProduccionesDetalleComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
