@@ -22,6 +22,9 @@ export class ProduccionesDetalleComponent implements OnInit {
    */
    produccion: Produccion;
 
+   /**
+    * Entidad de la multimedia de la producción
+    */
    multimedia: Multimedia;
 
   /**

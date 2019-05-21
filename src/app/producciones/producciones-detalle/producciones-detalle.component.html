@@ -1,6 +1,6 @@
 <div class="row my-4 mx-4" *ngIf="flagLoad">
   <div class="col-md-6">
-    <img class="foto-detalle orange" src="https://i.stack.imgur.com/quPml.png" width="100%">
+    <img class="foto-detalle orange" src = {{multimedia.portada}} width="100%">
   </div>
   <div class="col-md-6">
     <div class="col-md-1"></div>
@@ -17,7 +17,6 @@
       <br />
       <p class="col-md-12 text-left"><b>Clasificación audiencia: </b> {{ produccion.clasificacionAudiencia }}</p>
       <p class="col-md-12 text-left"><b>Calificación promedio: </b> {{ produccion.calificacionPromedio }}</p>
-      <p class="col-md-12 text-left"><b>Link imagen multimedia: </b> {{ multimedia.portada }}</p>
       <p class="col-md-12 text-left"><b></b> {{ produccion.descripcion }}</p>
     </div>
   </div>
