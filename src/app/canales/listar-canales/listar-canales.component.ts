@@ -22,7 +22,7 @@ export class ListarCanalesComponent implements OnInit {
    * Carga la informacion de usuarios asyncronicamente
    */
   private async loadData() {
-    await this.canalService.getCanales().subscribe((informacion) => {
+     this.canalService.getCanales().subscribe((informacion) => {
       this.canales = informacion;
       this.flagLoad = false;
     });

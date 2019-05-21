@@ -6,7 +6,6 @@ import { User } from '../user';
 
 import {Router} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import {throwError} from 'rxjs';
 
 @Component({
     selector: 'app-auth-login',
@@ -37,6 +36,7 @@ export class AuthLoginComponent implements OnInit {
         this.authService.veriificarCredenciales(this.user)
             .then((data: any) => {
                 console.log('login', data);
+                localStorage.setItem('id_user', data.id);
                 this.authService.login(this.user.role);
                 if (this.user.role === this.roles[1]) {
                     this.router.navigate(['usuario/home']);

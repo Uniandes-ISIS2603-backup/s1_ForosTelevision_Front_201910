@@ -31,6 +31,17 @@ export class ResenaService {
     return this.http.post(API_URL, cuerpo).toPromise();
   }
 
+  eliminarResena(resena: Resena):Observable<any>
+  {
+    // @ts-ignore
+    const cuerpo = {
+      id: resena.id,
+    };
+    return this.http.delete(API_URL+ resena.id);
+
+  }
+
+
 
   actualizarResena(resena: Resena)
   {

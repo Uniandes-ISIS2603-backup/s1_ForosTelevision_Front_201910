@@ -1,0 +1,27 @@
+<div class="row my-4 mx-4" *ngIf="flagLoad">
+  <div class="col-md-6">
+    <img class="foto-detalle orange" src="https://i.stack.imgur.com/quPml.png" width="100%">
+  </div>
+  <div class="col-md-6">
+    <div class="col-md-1"></div>
+    <div class="col-md-11">
+      <br />
+      <h4 class="col-md-12"><b>{{ produccion.nombre }}</b></h4>
+      <br />
+      <a [routerLink]="['/admin/productoras/lista/', produccion.productora ]" class="btn btn-info btn-action"><i
+                  class="icon ion-md-open"></i>  Productora</a>
+      <b class="col-md-12 text-left">  </b>
+      <a [routerLink]="['/admin/multimedia/lista/', produccion.multimedia ]" class="btn btn-info btn-action"><i
+                  class="icon ion-md-open"></i>  Multimedia</a>
+      <br />
+      <br />
+      <p class="col-md-12 text-left"><b>Clasificación audiencia: </b> {{ produccion.clasificacionAudiencia }}</p>
+      <p class="col-md-12 text-left"><b>Calificación promedio: </b> {{ produccion.calificacionPromedio }}</p>
+      <p class="col-md-12 text-left"><b></b> {{ produccion.descripcion }}</p>
+    </div>
+  </div>
+</div>
+<div class="row justity-content-center mt-4">
+  <a routerLink="/admin/producciones/lista/" class="btn btn-warning offset-md-6 col-1">Regresar</a>
+</div>
+

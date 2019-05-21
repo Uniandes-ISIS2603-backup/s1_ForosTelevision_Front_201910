@@ -60,7 +60,7 @@ export class ProduccionesService {
             multimedia: produccion.multimedia,
             productora: produccion.productora,
         };
-        return this.http.put(API_URL, cuerpo);
+        return this.http.put(API_URL + "editar/" + `${produccion.id}`, cuerpo);
     }
 
 }

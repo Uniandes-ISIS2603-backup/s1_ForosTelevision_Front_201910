@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="col-md-8 offset-2">
+    <br>
+    <h2 class="text-center">Actualizar categoría</h2>
+    <br>
+    <form name="sign-up" *ngIf="categoria!=null" (ngSubmit)="f.form.valid && actualizar()" #f="ngForm" novalidate
+          class="row">
+      <div class="form-group col-md-6 col-xs-12">
+        <label for="name"><b>Nombre</b></label>
+        <input type="text" name="name" class="form-control" id="name" [(ngModel)]="categoria.nombre"
+               required>
+      </div>
+      <div class="col-12 text-center mt-3">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>

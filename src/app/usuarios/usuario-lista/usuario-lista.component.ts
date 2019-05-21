@@ -29,7 +29,7 @@ export class UsuarioListaComponent implements OnInit {
      * Carga la informacion de usuarios asyncronicamente
      */
     private async loadData() {
-        await this.apiServive.getUsuarios().subscribe((informacion) => {
+         this.apiServive.getUsuarios().subscribe((informacion) => {
             this.usuarios = informacion;
             this.flagLoad = false;
         });

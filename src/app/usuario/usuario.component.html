@@ -1,40 +1,46 @@
-<div class="menu">
+<section class="container-custom">
+  <div class="menu">
     <ul>
       <li>
         <a href="#" class="item-icon">
-        <i class="icon ion-md-tv"></i>
-        <span>producciones</span>
+          <i class="icon ion-md-tv"></i>
+          <span>producciones</span>
         </a>
       </li>
       <li>
         <a href="#" class="item-icon">
-            <i class="icon ion-md-grid"></i>
+          <i class="icon ion-md-grid"></i>
           <span>parrila</span>
-          </a>
+        </a>
       </li>
       <li>
         <a href="#" class="item-icon">
-            <i class="icon ion-md-briefcase"></i>
+          <i class="icon ion-md-briefcase"></i>
           <span>productora</span>
         </a>
       </li>
       <li>
-        <a href="#" class="item-icon">
+        <a routerLink="/usuario/recomendacion" class="item-icon">
           <i class="icon ion-md-star"></i>
           <span>recomendaciones</span>
         </a>
       </li>
       <li>
         <a href="#" class="item-icon">
-            <i class="icon ion-md-bookmarks"></i>
+          <i class="icon ion-md-bookmarks"></i>
           <span>canales</span>
         </a>
       </li>
       <li>
-        <a href="#" class="item-icon">
+        <a routerLink="/usuario/seguir" class="item-icon">
           <i class="icon ion-md-person"></i>
-          <span>usuarios</span>
+          <span>Seguir</span>
         </a>
-      </li>			
+      </li>
     </ul>
   </div>
+  <div class="container-sidebar">
+    <router-outlet></router-outlet>
+  </div>
+</section>
+
