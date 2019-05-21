@@ -11,7 +11,6 @@ import {ToastrModule} from 'ngx-toastr';
 import {CanalesModule} from './canales/canales.module';
 import {CategoriaModule} from './categoria/categoria.module';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
-
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';

@@ -192,7 +192,7 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'canales/crear/',
+                path: 'canales/create/',
                 pathMatch: 'full',
                 component: CrearCanalesComponent,
                 canActivate: [NgxPermissionsGuard],
@@ -358,6 +358,17 @@ const routes: Routes = [
             },
             {
                 path: 'productora/create',
+                pathMatch: 'full',
+                component: ProductoraCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/delete',
                 pathMatch: 'full',
                 component: ProductoraCreateComponent,
                 canActivate: [NgxPermissionsGuard],
