@@ -38,7 +38,7 @@ export class EditarResenasComponent implements OnInit {
    * Carga de información en el componente
    */
   private async loadData() {
-    await this.resenaService.getResena(this.id).subscribe((informacion) => {
+      this.resenaService.getResena(this.id).subscribe((informacion) => {
       this.resena = informacion;
       this.flagLoad = true;
     });

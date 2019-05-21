@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {CanalesService} from '../../canales/canales.service';
 import {Resena} from '../resena';
 import {ResenaService} from '../resena.service';
 
@@ -23,7 +22,7 @@ export class ListarResenasComponent implements OnInit {
    * Carga la informacion de usuarios asyncronicamente
    */
   private async loadData() {
-    await this.resenaService.getResenas().subscribe((informacion) => {
+      this.resenaService.getResenas().subscribe((informacion) => {
       this.resenas = informacion;
       this.flagLoad = false;
     });

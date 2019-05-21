@@ -1,0 +1,22 @@
+.custom-card{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: all 100ms ease-in;
+}
+.option{
+    display: none;
+    transition: all 100ms ease-in;
+}
+.custom-card:hover{
+    background-color: #4432EF;
+}
+.custom-card:hover .option{
+    transition: all 100ms ease-in;
+    display: block;
+}
+.custom-card:hover .custom-content{
+    display: none;
+}

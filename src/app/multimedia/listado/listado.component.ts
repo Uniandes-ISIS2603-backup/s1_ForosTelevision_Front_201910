@@ -23,9 +23,8 @@ export class ListadoComponent implements OnInit {
    * Carga la informacion de usuarios asyncronicamente
    */
   private async loadData() {
-    await this.mulService.getMultimedias().subscribe((informacion) => {
+      this.mulService.getMultimedias().subscribe((informacion) => {
       this.multimedia = informacion;
-      console.table(this.multimedia);
       this.flagLoad = false;
     });
   }

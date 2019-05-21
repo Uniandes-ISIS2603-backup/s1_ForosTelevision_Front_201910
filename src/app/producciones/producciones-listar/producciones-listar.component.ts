@@ -30,7 +30,7 @@ export class ProduccionesListarComponent implements OnInit {
    * Carga la informacion de usuarios asyncronicamente
    */
   private async loadData() {
-    await this.produccionesService.getProducciones().subscribe((informacion) => {
+     this.produccionesService.getProducciones().subscribe((informacion) => {
       this.producciones = informacion;
       this.flagLoad = false;
     });

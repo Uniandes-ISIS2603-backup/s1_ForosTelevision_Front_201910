@@ -36,7 +36,7 @@ export class UsuarioDetalleComponent implements OnInit {
      * Carga los datos del modulo
      */
     private async loadData() {
-        await this.apiService.getUsuario(this.id).subscribe(
+         this.apiService.getUsuario(this.id).subscribe(
             (informacion) => {
                 this.usuario = informacion;
                 this.flagLoad = true;

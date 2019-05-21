@@ -50,7 +50,7 @@ export class EditMultimediaComponent implements OnInit {
     async cargarPortada() {
         const file = this.selectedFiles.item(0);
         const cargatarea = this.multimediaService.tareaCloudStorage(file.name, file);
-        await cargatarea.percentageChanges().subscribe((porcentaje) => {
+        cargatarea.percentageChanges().subscribe((porcentaje) => {
             this.porcentajePortada = `Cargando % ${Math.round(porcentaje)}`;
         });
         cargatarea.task.then(() => {
@@ -78,7 +78,7 @@ export class EditMultimediaComponent implements OnInit {
      */
     async guardar() {
         const m: any = {id_multimedia: this.multimedia.id, imagen: this.portada};
-        await this.multimediaService.update(m).then(
+        this.multimediaService.update(m).then(
             (info) => {
                 console.log('update M', info);
                 this.router.navigate(['/admin/multimedia/lista']);

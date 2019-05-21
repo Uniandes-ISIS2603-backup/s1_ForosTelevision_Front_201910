@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
-import {Usuario} from '../../usuarios/usuario';
 import {Resena} from '../resena';
 import {ResenaService} from '../resena.service';
 
@@ -20,17 +19,15 @@ export class CrearResenasComponent implements OnInit {
   }
 
   /**
-   * Entidad que representa una resena
+   * Entidad que representa un usuario
    */
   resena: Resena;
 
   /**
    * Envia la informacion al api
    */
-  creacion(): void {
-
+  creacion() {
     console.log('registro', this.resena);
-
     this.resenaService.crearResena(this.resena).then(
         () => {
           this.toastrService.success('Creacion', 'Creacion Realizado');

@@ -41,7 +41,7 @@ export class EstadoEditComponent implements OnInit {
      * Carga de información
      */
     private async loadData() {
-        await this.estadoService.getEstados(this.id).subscribe(
+         this.estadoService.getEstados(this.id).subscribe(
             (informacion: any) => {
                 console.table('inf', this.id);
                 informacion.data.forEach((k) => {
