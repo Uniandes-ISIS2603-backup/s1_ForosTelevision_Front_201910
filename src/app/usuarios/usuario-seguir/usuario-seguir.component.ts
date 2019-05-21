@@ -46,7 +46,8 @@ export class UsuarioSeguirComponent implements OnInit {
   }
 
   seguirUsuario(id: number) {
-    this.apiServive.seguirUsuario(this.idUser, id.toString()).then( (data) => {
+    this.apiServive.
+    seguirUsuario(this.idUser, id.toString()).then( (data) => {
       console.log('Inf', data);
     });
     this.toastrService.success('Nuevo seguidor', 'Seguir');

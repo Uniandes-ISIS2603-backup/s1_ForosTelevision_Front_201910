@@ -86,4 +86,6 @@ export class ApiService {
         return this.http.post('http://app-colombia.com/panini/email.php', body, requestOptions).toPromise();
     }
 
+
+
 }

@@ -25,6 +25,7 @@ import {ProductoraEditComponent} from '../productora/productora-edit/productora-
 import {ProductoraListComponent} from '../productora/productora-list/productora-list.component';
 import {CrearResenasComponent} from '../resenas/crear-resenas/crear-resenas.component';
 import {EditarResenasComponent} from '../resenas/editar-resenas/editar-resenas.component';
+import {EliminarResenasComponent} from '../resenas/eliminar-resenas/eliminar-resenas.component';
 import {ListarResenasComponent} from '../resenas/listar-resenas/listar-resenas.component';
 import {ResenasDetailComponent} from '../resenas/resenas-detail/resenas-detail.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
@@ -69,6 +70,46 @@ const routes: Routes = [
             {
                 path: 'seguir',
                 component: UsuarioSeguirComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT'],
+                    },
+                },
+            },
+            {
+                path: 'canales/lista',
+                component: ListarCanalesComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT'],
+                    },
+                },
+            },
+            {
+                path: 'producciones/list',
+                component: ProduccionesListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/lista',
+                component: ProduccionesListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT'],
+                    },
+                },
+            },
+            {
+                path: 'recomendacion',
+                component: UsuarioRecomendacionComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
@@ -360,6 +401,17 @@ const routes: Routes = [
                 path: 'productora/create',
                 pathMatch: 'full',
                 component: ProductoraCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'resenas/delete',
+                pathMatch: 'full',
+                component: EliminarResenasComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
