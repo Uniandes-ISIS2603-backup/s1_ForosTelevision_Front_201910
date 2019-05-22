@@ -24,14 +24,17 @@
       <td>{{ produccion.nombre }}</td>
       <td>{{ produccion.clasificacionAudiencia }}</td>
       <td>{{ produccion.calificacionPromedio }}</td>
-      <td> <a [routerLink]="['/usuario/producciones/resenas/', produccion.id ]" class="btn btn-danger btn-action">Ver Reseñas</a></td>
+      <td>
+      </td>
+      <td> <a [routerLink]="['/admin/producciones/resenas/', produccion.id ]" class="btn btn-danger btn-action">Ver Reseñas</a>
+      </td>
       <td>
         <div class="btn-container">
           <a [routerLink]="['/admin/producciones/editar/', produccion.id ]" class="btn btn-danger btn-action">Ver Multimedia</a>
         </div>
       </td>
 
-    </tr>
+
     </tbody>
   </table>
 </div>
