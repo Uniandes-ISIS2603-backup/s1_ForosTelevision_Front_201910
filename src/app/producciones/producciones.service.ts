@@ -30,6 +30,14 @@ export class ProduccionesService {
     }
 
     /**
+     * Retorna todos los staff de una producción
+     * @param id identificador único de producción
+     */
+    getStaffsProduccion(id : number): Observable<any> {
+        return this.http.get<any>(API_URL + producciones_single + `${id}/staff`);
+    }
+
+    /**
      * Registra un nuevo producción
      * @param produccion entidad
      * @param multimedia
