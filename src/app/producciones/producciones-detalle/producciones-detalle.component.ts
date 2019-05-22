@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Produccion} from '../produccion';
+import {Staff} from '../../staffs/staff';
 import {ProduccionesService} from '../producciones.service';
 import {MultimediaService} from '../../multimedia/multimedia.service';
 import { Multimedia } from '../../multimedia/multimedia';
@@ -21,6 +22,16 @@ export class ProduccionesDetalleComponent implements OnInit {
    * Entidad de usuario
    */
    produccion: Produccion;
+  
+  /**
+   * Staff de la producción
+   */
+  staff: Staff[];
+
+   /**
+    * Entidad de la multimedia de la producción
+    */
+   multimedia: Multimedia;
 
    multimedia: Multimedia;
 
@@ -49,6 +60,13 @@ export class ProduccionesDetalleComponent implements OnInit {
           this.produccion = informacion;
           this.flagLoad = true;
         });
+
+      this.produccionesService.getStaffsProduccion(this.id).subscribe(
+        (informacion) => {
+          this.staff = informacion;
+          this.flagLoad = true;
+        });
+
       this.multimediaService.getMultimedia(this.id).subscribe(
         (informacion) => {
           this.multimedia = informacion;

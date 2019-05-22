@@ -10,6 +10,7 @@ import {NgxPermissionsModule} from 'ngx-permissions';
 import {ToastrModule} from 'ngx-toastr';
 import {CanalesModule} from './canales/canales.module';
 import {CategoriaModule} from './categoria/categoria.module';
+import {StaffsModule} from './staffs/staffs.module';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage';
@@ -48,6 +49,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
         MultimediaModule,
         HttpClientModule,
         ProduccionesModule,
+        StaffsModule,
         ResenasModule,
         BrowserAnimationsModule,
         ModalDialogModule.forRoot(),

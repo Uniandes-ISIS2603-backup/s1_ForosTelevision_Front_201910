@@ -8,7 +8,6 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import {CanalDetailComponent} from '../canales/canal-detail/canal-detail.component';
 import {CrearCanalesComponent} from '../canales/crear-canales/crear-canales.component';
 import {EditarCanalesComponent} from '../canales/editar-canales/editar-canales.component';
-import {ListarCanalesUsuarioComponent} from '../canales/listar-canales-usuario/listar-canales-usuario.component';
 import {ListarCanalesComponent} from '../canales/listar-canales/listar-canales.component';
 import {CategoriaCreateComponent} from '../categoria/categoria-create/categoria-create.component';
 import {CategoriaEditComponent} from '../categoria/categoria-edit/categoria-edit.component';
@@ -20,14 +19,12 @@ import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-mul
 import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
 import {ProduccionesDetalleComponent} from '../producciones/producciones-detalle/producciones-detalle.component';
-import {ProduccionesListarUsuarioComponent} from '../producciones/producciones-listar-usuario/producciones-listar-usuario.component';
 import {ProduccionesListarComponent} from '../producciones/producciones-listar/producciones-listar.component';
 import {ProductoraCreateComponent} from '../productora/productora-create/productora-create.component';
 import {ProductoraEditComponent} from '../productora/productora-edit/productora-edit.component';
 import {ProductoraListComponent} from '../productora/productora-list/productora-list.component';
 import {CrearResenasComponent} from '../resenas/crear-resenas/crear-resenas.component';
 import {EditarResenasComponent} from '../resenas/editar-resenas/editar-resenas.component';
-import {EliminarResenasComponent} from '../resenas/eliminar-resenas/eliminar-resenas.component';
 import {ListarResenasComponent} from '../resenas/listar-resenas/listar-resenas.component';
 import {ResenasDetailComponent} from '../resenas/resenas-detail/resenas-detail.component';
 import {UsuarioComponent} from '../usuario/usuario.component';
@@ -39,7 +36,10 @@ import {UsuarioRecomendacionComponent} from '../usuarios/usuario-recomendacion/u
 import {UsuarioSeguirComponent} from '../usuarios/usuario-seguir/usuario-seguir.component';
 import { ProduccionesCrearComponent } from '../producciones/producciones-crear/producciones-crear.component';
 import { ProduccionesEditarComponent } from '../producciones/producciones-editar/producciones-editar.component';
-
+import { StaffsListarComponent } from '../staffs/staffs-listar/staffs-listar.component';
+import { StaffsDetalleComponent } from '../staffs/staffs-detalle/staffs-detalle.component';
+import { StaffsCrearComponent } from '../staffs/staffs-crear/staffs-crear.component';
+import { StaffsEditarComponent } from '../staffs/staffs-editar/staffs-editar.component';
 
 const routes: Routes = [
 
@@ -83,47 +83,7 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'canales/lista',
-                component:  ListarCanalesUsuarioComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['CLIENT'],
-                    },
-                },
-            },
-            {
-                path: 'producciones/list',
-                component: ProduccionesListarUsuarioComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['CLIENT'],
-                    },
-                },
-            },
-            {
-                path: 'resenas/lista',
-                component: ProduccionesListarComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['CLIENT'],
-                    },
-                },
-            },
-            {
                 path: 'recomendacion',
-                component: UsuarioRecomendacionComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['CLIENT'],
-                    },
-                },
-            },
-            {
-                path: 'producciones/resenas',
                 component: UsuarioRecomendacionComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
@@ -182,7 +142,7 @@ const routes: Routes = [
                     },
                 },
             },
-            {
+           {
                 path: 'usuario/estado/edit/:id',
                 pathMatch: 'full',
                 component: EstadoEditComponent,
@@ -204,7 +164,7 @@ const routes: Routes = [
                     },
                 },
             },
-            {
+          {
                 path: 'usuario/create',
                 pathMatch: 'full',
                 component: UsuarioCreateComponent,
@@ -238,7 +198,7 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'canales/crear/',
+                path: 'canales/create/',
                 pathMatch: 'full',
                 component: CrearCanalesComponent,
                 canActivate: [NgxPermissionsGuard],
@@ -248,7 +208,7 @@ const routes: Routes = [
                     },
                 },
             },
-            {
+          {
                 path: 'multimedia/create',
                 pathMatch: 'full',
                 component: CrearMultimediaComponent,
@@ -436,9 +396,42 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'resenas/delete',
+                path: 'staff/lista',
                 pathMatch: 'full',
-                component: EliminarResenasComponent,
+                component: StaffsListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','GUEST'],
+                    },
+                },
+            },
+            {
+                path: 'staff/lista/:id',
+                pathMatch: 'full',
+                component: StaffsDetalleComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'staff/crear',
+                pathMatch: 'full',
+                component: StaffsCrearComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'staff/editar/:id',
+                pathMatch: 'full',
+                component: StaffsEditarComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
