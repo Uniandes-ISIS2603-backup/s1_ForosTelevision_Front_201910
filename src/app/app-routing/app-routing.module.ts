@@ -36,6 +36,10 @@ import {UsuarioRecomendacionComponent} from '../usuarios/usuario-recomendacion/u
 import {UsuarioSeguirComponent} from '../usuarios/usuario-seguir/usuario-seguir.component';
 import { ProduccionesCrearComponent } from '../producciones/producciones-crear/producciones-crear.component';
 import { ProduccionesEditarComponent } from '../producciones/producciones-editar/producciones-editar.component';
+import { StaffsListarComponent } from '../staffs/staffs-listar/staffs-listar.component';
+import { StaffsDetalleComponent } from '../staffs/staffs-detalle/staffs-detalle.component';
+import { StaffsCrearComponent } from '../staffs/staffs-crear/staffs-crear.component';
+import { StaffsEditarComponent } from '../staffs/staffs-editar/staffs-editar.component';
 
 const routes: Routes = [
 
@@ -384,6 +388,50 @@ const routes: Routes = [
                 path: 'productora/create',
                 pathMatch: 'full',
                 component: ProductoraCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'staff/lista',
+                pathMatch: 'full',
+                component: StaffsListarComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','GUEST'],
+                    },
+                },
+            },
+            {
+                path: 'staff/lista/:id',
+                pathMatch: 'full',
+                component: StaffsDetalleComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'staff/crear',
+                pathMatch: 'full',
+                component: StaffsCrearComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'staff/editar/:id',
+                pathMatch: 'full',
+                component: StaffsEditarComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {

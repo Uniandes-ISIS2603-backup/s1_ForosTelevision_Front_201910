@@ -24,4 +24,38 @@
 <div class="row justity-content-center mt-4">
   <a routerLink="/admin/producciones/lista/" class="btn btn-warning offset-md-6 col-1">Regresar</a>
 </div>
-
+<br>
+<br>
+<div class="row mt-12">
+  <div class="col-md-1"></div>
+  <h4><b>Participantes</b></h4>
+</div>
+<br>
+<div class="row mt-12">
+  <div class="col-md-1"></div>
+  <div class="col-md-5">
+    <table class="table table-bordered table-striped table-condensed" width="100" style="text-align:center;">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Rol</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let actor of staff">
+            <td> {{ actor.id }} </td>
+            <td> {{ actor.nombre }} </td>
+            <td> {{ actor.rol }} </td>
+            <td> 
+              <a [routerLink]="['/admin/staff/lista/', actor.id ]" >
+                <img [src]="actor.foto" height="100px" width="100px"> 
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <div class="col-md-1"></div>
+</div>
