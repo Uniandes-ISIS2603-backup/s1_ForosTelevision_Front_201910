@@ -7,6 +7,7 @@ import {CanalesService} from './canales.service';
 import {ListarCanalesComponent} from './listar-canales/listar-canales.component';
 import { EditarCanalesComponent } from './editar-canales/editar-canales.component';
 import { CrearCanalesComponent } from './crear-canales/crear-canales.component';
+import { ListarCanalesUsuarioComponent } from './listar-canales-usuario/listar-canales-usuario.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import { CrearCanalesComponent } from './crear-canales/crear-canales.component';
     AppRoutingModule,
     FormsModule,
   ],
-  declarations: [ListarCanalesComponent, CanalDetailComponent, EditarCanalesComponent, CrearCanalesComponent],
+  declarations: [ListarCanalesComponent, CanalDetailComponent, EditarCanalesComponent, CrearCanalesComponent, ListarCanalesUsuarioComponent],
   providers: [CanalesService],
 })
 export class CanalesModule { }

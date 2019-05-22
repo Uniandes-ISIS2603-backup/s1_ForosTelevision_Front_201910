@@ -8,6 +8,7 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import {CanalDetailComponent} from '../canales/canal-detail/canal-detail.component';
 import {CrearCanalesComponent} from '../canales/crear-canales/crear-canales.component';
 import {EditarCanalesComponent} from '../canales/editar-canales/editar-canales.component';
+import {ListarCanalesUsuarioComponent} from '../canales/listar-canales-usuario/listar-canales-usuario.component';
 import {ListarCanalesComponent} from '../canales/listar-canales/listar-canales.component';
 import {CategoriaCreateComponent} from '../categoria/categoria-create/categoria-create.component';
 import {CategoriaEditComponent} from '../categoria/categoria-edit/categoria-edit.component';
@@ -19,6 +20,7 @@ import {CrearMultimediaComponent} from '../multimedia/crear-multimedia/crear-mul
 import {EditMultimediaComponent} from '../multimedia/edit-multimedia/edit-multimedia.component';
 import {ListadoComponent} from '../multimedia/listado/listado.component';
 import {ProduccionesDetalleComponent} from '../producciones/producciones-detalle/producciones-detalle.component';
+import {ProduccionesListarUsuarioComponent} from '../producciones/producciones-listar-usuario/producciones-listar-usuario.component';
 import {ProduccionesListarComponent} from '../producciones/producciones-listar/producciones-listar.component';
 import {ProductoraCreateComponent} from '../productora/productora-create/productora-create.component';
 import {ProductoraEditComponent} from '../productora/productora-edit/productora-edit.component';
@@ -35,6 +37,7 @@ import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.compon
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
 import {UsuarioRecomendacionComponent} from '../usuarios/usuario-recomendacion/usuario-recomendacion.component';
 import {UsuarioSeguirComponent} from '../usuarios/usuario-seguir/usuario-seguir.component';
+
 
 const routes: Routes = [
 
@@ -79,7 +82,7 @@ const routes: Routes = [
             },
             {
                 path: 'canales/lista',
-                component: ListarCanalesComponent,
+                component:  ListarCanalesUsuarioComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
@@ -89,7 +92,7 @@ const routes: Routes = [
             },
             {
                 path: 'producciones/list',
-                component: ProduccionesListarComponent,
+                component: ProduccionesListarUsuarioComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
@@ -118,7 +121,7 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'recomendacion',
+                path: 'producciones/resenas',
                 component: UsuarioRecomendacionComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row mx-1 my-4">
+    <h2 class="text-left col-sm-12 col-md-9">Producciones</h2>
+
+  </div>
+  <!--Lazy loader-->
+  <section class="col-12 loader" [ngClass]="{'ocultar': !flagLoad }">
+    <img src="../../../assets/img/loading.gif">
+    <h4 class="col-12 text-center header-load">Cargando contenido...</h4>
+  </section>
+  <table class="table table-striped" [ngClass]="{'ocultar': flagLoad }">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Clasificación audiencia</th>
+      <th scope="col">Calificación promedio</th>
+      <th scope="col">Resenas</th>
+      <th scope="col">Multimedia</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let produccion of producciones"
+        >
+      <td>{{ produccion.nombre }}</td>
+      <td>{{ produccion.clasificacionAudiencia }}</td>
+      <td>{{ produccion.calificacionPromedio }}</td>
+      <td> <a [routerLink]="['/usuario/producciones/resenas/', produccion.id ]" class="btn btn-danger btn-action">Ver Reseñas</a></td>
+      <td>
+        <div class="btn-container">
+          <a [routerLink]="['/admin/producciones/editar/', produccion.id ]" class="btn btn-danger btn-action">Ver Multimedia</a>
+        </div>
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
