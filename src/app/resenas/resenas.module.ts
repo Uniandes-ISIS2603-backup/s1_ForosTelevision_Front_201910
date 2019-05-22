@@ -6,9 +6,10 @@ import { CrearResenasComponent } from './crear-resenas/crear-resenas.component';
 import { EditarResenasComponent } from './editar-resenas/editar-resenas.component';
 import { ListarResenasComponent } from './listar-resenas/listar-resenas.component';
 import { ResenasDetailComponent } from './resenas-detail/resenas-detail.component';
+import { EliminarResenasComponent } from './eliminar-resenas/eliminar-resenas.component';
 
 @NgModule({
-  declarations: [ListarResenasComponent, ResenasDetailComponent, CrearResenasComponent, EditarResenasComponent],
+  declarations: [ListarResenasComponent, ResenasDetailComponent, CrearResenasComponent, EditarResenasComponent, EliminarResenasComponent],
   imports: [
     CommonModule,
     RouterModule,

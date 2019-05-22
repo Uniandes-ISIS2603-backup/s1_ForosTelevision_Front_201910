@@ -198,7 +198,7 @@ const routes: Routes = [
                 },
             },
             {
-                path: 'canales/crear/',
+                path: 'canales/create/',
                 pathMatch: 'full',
                 component: CrearCanalesComponent,
                 canActivate: [NgxPermissionsGuard],
