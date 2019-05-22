@@ -9,9 +9,10 @@ import { ProduccionesCrearComponent } from './producciones-crear/producciones-cr
 import { ProduccionesListarComponent } from './producciones-listar/producciones-listar.component';
 import { ProduccionesDetalleComponent } from './producciones-detalle/producciones-detalle.component';
 import { ProduccionesEditarComponent } from './producciones-editar/producciones-editar.component';
+import { ProduccionesListarUsuarioComponent } from './producciones-listar-usuario/producciones-listar-usuario.component';
 
 @NgModule({
-  declarations: [ProduccionesListarComponent, ProduccionesCrearComponent, ProduccionesDetalleComponent, ProduccionesEditarComponent],
+  declarations: [ProduccionesListarComponent, ProduccionesCrearComponent, ProduccionesDetalleComponent, ProduccionesEditarComponent,  ProduccionesListarUsuarioComponent],
   imports: [
     CommonModule,
     AppRoutingModule,

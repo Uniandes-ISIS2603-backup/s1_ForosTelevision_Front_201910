@@ -33,6 +33,8 @@ export class ProduccionesDetalleComponent implements OnInit {
     */
    multimedia: Multimedia;
 
+   multimedia: Multimedia;
+
   /**
    * Flag de lazy load y render lista
    */
@@ -64,6 +66,7 @@ export class ProduccionesDetalleComponent implements OnInit {
           this.staff = informacion;
           this.flagLoad = true;
         });
+
       this.multimediaService.getMultimedia(this.id).subscribe(
         (informacion) => {
           this.multimedia = informacion;

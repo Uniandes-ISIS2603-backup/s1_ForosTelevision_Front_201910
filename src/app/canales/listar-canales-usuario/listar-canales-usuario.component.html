@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row mx-1 my-4">
+    <h2 class="text-left col-sm-12 col-md-9"  > Canales  </h2>
+
+  </div>
+  <!--Lazy loader-->
+  <section class="col-12 loader" [ngClass]="{'ocultar': !flagLoad }">
+    <img src="../../../assets/img/loading.gif">
+    <h4 class="col-12 text-center header-load">Cargando contenido...</h4>
+  </section>
+  <table class="table table-striped" [ngClass]="{'ocultar': flagLoad }">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let canal of canales">
+      <td>{{ canal.nombre }}</td>
+      <td>{{ canal.rating }}</td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+

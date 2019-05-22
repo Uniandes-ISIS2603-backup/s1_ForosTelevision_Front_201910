@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Resena} from './resena';
 
 const API_URL = 'http://localhost:8080/s1_foros-api/api/resenas/';
+const API_URL_PROD = 'http://localhost:8080/s1_foros-api/api/resenas/';
 const resenas = 'all';
 const resenas_single = '';
 
@@ -16,12 +17,18 @@ export class ResenaService {
   }
 
   getResenas(): Observable<any> {
-    return this.http.get<any>(API_URL + resenas);
+    return this.http.get<any>(API_URL_PROD + resenas_single+ resenas);
   }
 
   getResena(id: number): Observable<any> {
     return this.http.get<any>(API_URL + resenas_single + `${id}`);
   }
+
+  getResenasProducciones(id: number): Observable<any> {
+    return this.http.get<any>(API_URL + resenas_single + `${id}`);
+  }
+
+
 
   crearResena(resena: Resena): Promise<any> {
     const cuerpo = {
