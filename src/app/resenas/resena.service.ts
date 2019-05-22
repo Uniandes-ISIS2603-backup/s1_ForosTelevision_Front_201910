@@ -17,7 +17,7 @@ export class ResenaService {
   }
 
   getResenas(): Observable<any> {
-    return this.http.get<any>(API_URL_PROD + resenas_single + `${id}`);
+    return this.http.get<any>(API_URL_PROD + resenas_single+ resenas);
   }
 
   getResena(id: number): Observable<any> {
