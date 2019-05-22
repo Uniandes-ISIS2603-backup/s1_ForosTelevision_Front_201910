@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Staff} from '../staff';
+import {Produccion} from '../../producciones/produccion';
 import {StaffsService} from '../staffs.service';
+import { ProduccionesService } from '../../producciones/producciones.service';
 
 @Component({
   selector: 'app-staffs-detalle',
@@ -18,6 +20,9 @@ export class StaffsDetalleComponent implements OnInit {
    * Entidad de usuario
    */
   public staff: Staff;
+
+  public peliculas: Produccion[];
+
   /**
    * Flag de lazy load y render lista
    */
@@ -29,7 +34,8 @@ export class StaffsDetalleComponent implements OnInit {
    * @param apiService servicio para conexion http
    */
   constructor(private activateRoute: ActivatedRoute,
-              private staffsService: StaffsService) {
+              private staffsService: StaffsService,
+              private produccionesService: ProduccionesService) {
     this.id = activateRoute.snapshot.params['id'];
   }
 
@@ -42,6 +48,12 @@ export class StaffsDetalleComponent implements OnInit {
           this.staff = informacion;
           this.flagLoad = true;
         });
+    this.staffsService.getProduccionesStaff(this.id).subscribe(
+      (informacion) => {
+        this.peliculas = informacion;
+        this.flagLoad = true;
+      });
+
   }
 
   ngOnInit() {
