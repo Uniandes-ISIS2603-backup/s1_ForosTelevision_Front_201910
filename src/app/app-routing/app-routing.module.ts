@@ -37,6 +37,8 @@ import {UsuarioEditComponent} from '../usuarios/usuario-edit/usuario-edit.compon
 import { UsuarioListaComponent } from '../usuarios/usuario-lista/usuario-lista.component';
 import {UsuarioRecomendacionComponent} from '../usuarios/usuario-recomendacion/usuario-recomendacion.component';
 import {UsuarioSeguirComponent} from '../usuarios/usuario-seguir/usuario-seguir.component';
+import { ProduccionesCrearComponent } from '../producciones/producciones-crear/producciones-crear.component';
+import { ProduccionesEditarComponent } from '../producciones/producciones-editar/producciones-editar.component';
 
 
 const routes: Routes = [
@@ -330,7 +332,7 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN'],
+                        only: ['ADMIN','GUEST'],
                     },
                 },
             },
@@ -338,6 +340,28 @@ const routes: Routes = [
                 path: 'producciones/lista/:id',
                 pathMatch: 'full',
                 component: ProduccionesDetalleComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'producciones/crear',
+                pathMatch: 'full',
+                component: ProduccionesCrearComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN'],
+                    },
+                },
+            },
+            {
+                path: 'producciones/editar/:id',
+                pathMatch: 'full',
+                component: ProduccionesEditarComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {

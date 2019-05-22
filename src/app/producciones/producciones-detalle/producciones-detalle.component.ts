@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Produccion} from '../produccion';
 import {ProduccionesService} from '../producciones.service';
+import {MultimediaService} from '../../multimedia/multimedia.service';
+import { Multimedia } from '../../multimedia/multimedia';
 
 @Component({
   selector: 'app-producciones-detalle',
@@ -20,6 +22,8 @@ export class ProduccionesDetalleComponent implements OnInit {
    */
    produccion: Produccion;
 
+   multimedia: Multimedia;
+
   /**
    * Flag de lazy load y render lista
    */
@@ -31,7 +35,8 @@ export class ProduccionesDetalleComponent implements OnInit {
    * @param apiService servicio para conexion http
    */
   constructor(private activateRoute: ActivatedRoute,
-              private produccionesService: ProduccionesService) {
+              private produccionesService: ProduccionesService,
+              private multimediaService: MultimediaService) {
     this.id = activateRoute.snapshot.params['id'];
   }
 
@@ -42,6 +47,11 @@ export class ProduccionesDetalleComponent implements OnInit {
        this.produccionesService.getProduccion(this.id).subscribe(
         (informacion) => {
           this.produccion = informacion;
+          this.flagLoad = true;
+        });
+      this.multimediaService.getMultimedia(this.id).subscribe(
+        (informacion) => {
+          this.multimedia = informacion;
           this.flagLoad = true;
         });
   }

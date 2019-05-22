@@ -20,7 +20,7 @@ export class MultimediaService {
      * @param id identificador unico de multimedia
      */
     getMultimedia(id: number): Observable<any> {
-        return this.http.get<any>(API_URL + `${id}`);
+        return this.http.get<any>(API_URL + 'produccion/' + `${id}`);
     }
 
     /**
